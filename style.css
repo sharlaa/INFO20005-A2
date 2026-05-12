@@ -61,9 +61,20 @@ body {
 }
 
 /* LOGO */
-.logo-text {
-  font-weight: 600;
-  font-size: 20px;
+.nav-logo {
+  width: 95px;
+  height: auto;
+}
+
+.icon-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-icon {
+  width: 24px;
+  height: 24px;
 }
 
 /* NAV ITEMS */
@@ -72,16 +83,6 @@ body {
   text-decoration: none;
   color: black;
   white-space: nowrap;
-}
-
-/* ICONS */
-.icon-group {
-  display: flex;
-  gap: 8px;
-}
-
-.icon {
-  font-size: 18px;
 }
 
 /* GIRL */
@@ -311,6 +312,217 @@ body {
   font-size: 24px;
   text-align: left;
   padding-left: 18px;
+}
+
+/* SPORTS SECTION */
+.sports-section {
+  padding: 130px 70px 140px;
+}
+
+.sports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.sports-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 66px;
+  font-weight: 700;
+  color: #002752;
+}
+
+.sports-arrows {
+  display: flex;
+  gap: 14px;
+}
+
+.arrow-btn {
+  width: 49px;
+  height: 49px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0, 0, 0, 0.9);
+  color: #F4F5F7;
+
+  font-size: 34px;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.arrow-btn svg {
+  width: 30px;
+  height: 30px;
+}
+
+.sports-cards {
+  display: flex;
+  gap: 40px;
+}
+
+.sport-card img {
+  width: 400px;
+  height: 430px;
+
+  object-fit: cover;
+
+  border-radius: 40px;
+}
+
+/* CATALOGUE SECTION */
+.catalogue-section {
+  margin-top: -80px;
+  padding: 0px 70px 140px;
+}
+
+.catalogue-title {
+  font-family: 'Poppins', sans-serif;
+
+  font-size: 66px;
+  font-weight: 700;
+
+  color: #002752;
+
+  margin-bottom: 20px;
+}
+
+.catalogue-cards {
+  display: flex;
+  gap: 50px;
+}
+
+.catalogue-card img {
+  width:400px;
+  height: 267px;
+
+  object-fit: cover;
+
+  border-radius: 40px;
+}
+
+/* FOOTER SECTION*/
+.footer {
+  position: relative;
+
+  width: 100%;
+  min-height: 574px;
+
+  background: #003E93;
+
+  border-radius: 70px 70px 0 0;
+
+  padding: 90px 80px;
+
+  color: #F4F5F7;
+
+  box-shadow: 0 14px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* STORE INFO */
+.store-info h3 {
+  font-size: 30px;
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+.store-info p {
+  font-size: 23px;
+  line-height: 1.45;
+}
+
+/* GREEN NEWSLETTER BOX */
+.newsletter {
+  position: absolute;
+  top: 70px;
+  right: 80px;
+
+  width: 683px;
+  height: 196px;
+
+  background: #BFE804;
+  border-radius: 45px;
+
+  padding: 30px 48px;
+
+  box-shadow: 0 9px 9px rgba(0, 0, 0, 0.25);
+}
+
+.newsletter h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 41px;
+  font-weight: 400;
+  color: #F4F5F7;
+
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+/* FORM */
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* EMAIL INPUT */
+.newsletter-form input {
+  width: 327px;
+  height: 63px;
+
+  border-radius: 42px;
+  border: 2px solid rgba(219, 214, 214, 0.24);
+  background: rgba(244, 245, 247, 0.8);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+
+  padding: 0 26px;
+
+  font-size: 22px;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* SUBSCRIBE BUTTON */
+.newsletter-form button {
+  width: 141px;
+  height: 63px;
+
+  border-radius: 42px;
+  border: 2px solid rgba(219, 214, 214, 0.24);
+  background: #F4F5F7;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.7);
+
+  cursor: pointer;
+}
+
+/* ICON LOGO */
+.footer-logo {
+  position: absolute;
+
+  right: 50px;
+  bottom: 140px;
+
+  width: 500px;
 }
 
 /* NOTES: */
