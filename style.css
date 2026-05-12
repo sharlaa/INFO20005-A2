@@ -525,7 +525,257 @@ body {
   width: 500px;
 }
 
+/* ===================== */
+/* PRODUCT LIST PAGE */
+/* ===================== */
+
+
+.product-list-page {
+  background-color: #F3F5F7;
+}
+
+.product-navbar {
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  left: auto;
+  transform: none;
+}
+
+.product-main {
+  padding: 70px 45px 0;
+}
+
+.breadcrumb {
+  font-family: 'Poppins', sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+  color: rgba(128, 128, 128, 0.7);
+
+  margin-bottom: 5px;
+}
+
+.all-products-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #002752;
+}
+
+/* PRODUCT FILTER BOX */
+
+.product-filter-box {
+  width: 1044px;
+  height: 322px;
+
+  margin: 20px auto 70px;
+
+  background: #003E93;
+  border-radius: 45px;
+
+  padding: 38px 79px;
+
+  box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+.search-bar {
+  width: 886px;
+  height: 65px;
+
+  border-radius: 184px;
+  border: 1.8px solid #F4F5F7;
+
+  background: rgba(217, 217, 217, 0.01);
+
+  box-shadow:
+    0 0 2px rgba(0, 0, 0, 0.2),
+    2px 2px 3px rgba(255, 255, 255, 0.75) inset,
+    0 -7px 5px rgba(255, 255, 255, 0.35) inset,
+    -2px -4px 3px rgba(0, 0, 0, 0.2) inset;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 28px;
+
+  margin: 0 auto;
+}
+
+.search-bar img {
+  width: 27px;
+  height: 24px;
+
+  opacity: 0.7;
+
+  margin-right: 14px;
+}
+
+.search-bar input {
+  flex: 1;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+
+  color: #F3F5F7;
+}
+
+.search-bar input::placeholder {
+  color: rgba(243, 245, 247, 0.7);
+}
+
+.category-icons {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+
+  margin-top: 38px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-item img {
+  width: 93px;
+  height: auto;
+}
+
+/* PRODUCTS SECTION */
+
+.products-section {
+  width: 1320px;
+
+  margin-left: 50px;
+}
+
+.products-topbar {
+  width: 1310px;
+
+  margin: 70px auto 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.items-count {
+  color: #000;
+
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.sort-by {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #000;
+
+  font-family: Poppins;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.sort-arrow {
+  width: 28px;
+  height: 28px;
+}
+
+/* PRODUCT GRID */
+
+.products-grid {
+  width: 1310px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 42px;
+}
+
+.product-card img {
+  width: 300px;
+  height: 360px;
+
+  object-fit: cover;
+
+  border-radius: 27px;
+}
+
+.product-card h3 {
+  margin-top: 18px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+
+  color: #000;
+}
+
+.product-card span {
+  display: block;
+
+  margin-top: 2px;
+
+  font-family: 'Chillax', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+
+  color: #000;
+}
+
+/* PAGINATION BUTTONS */
+
+/* PAGINATION */
+
+.product-pagination {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 60px;
+  margin-bottom: 80px;
+
+  padding-right: 50px;
+}
+
+.page-btn {
+  width: 100px;
+  height: 52px;
+
+  border: none;
+
+  background: #BFE804;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+/* LEFT BUTTON */
+.page-btn.prev {
+  border-radius: 10px 0 0 10px;
+
+  border-right: 2px solid rgba(255,255,255,0.25);
+}
+
+/* RIGHT BUTTON */
+.page-btn.next {
+  border-radius: 0 10px 10px 0;
+}
+
 /* NOTES: */
-/* The buttons on blue box is popppins bold italic blm diganti  */
-/* maybe ganti hero picture jadi 3 division or something more rame  */
-/* buttons for prev next tweak lg */
+/* spacing di navbar ubah lg */
+/* icon di navbar kyknya gedein lg deh */
