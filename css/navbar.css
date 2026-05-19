@@ -98,12 +98,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
 
-  margin-right: 18px;
+  margin-right: 5px;
 
-  position: relative;
-  top: 28px;
+  transform: translateY(50px);
 }
 
 .nav-actions a {
