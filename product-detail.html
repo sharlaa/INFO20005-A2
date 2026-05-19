@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product List | ICON SPORTSWEAR</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./fonts/poppins.css">
+  <link rel="stylesheet" href="./fonts/chillax.css">
+</head>
+
+<body class="product-detail-page">
+    <!-- NAVBAR -->
+    <nav class="navbar product-navbar">
+
+        <div class="nav-left">
+        <a href="index.html" class="nav-pill">About</a>
+        <a href="#" class="nav-pill">Custom Teamwear</a>
+        <a href="product-list.html" class="nav-pill">Product List</a>
+        </div>
+
+        <img src="assets/icon-logo.png" alt="ICON logo" class="nav-logo">
+
+        <div class="nav-right">
+        <a href="#" class="nav-pill">Club Zone</a>
+        <a href="#" class="nav-pill">Enquiry Form</a>
+        <a href="#" class="nav-pill">Locations</a>
+
+        <div class="icon-group">
+            <img src="assets/shopping-cart.svg" alt="Cart" class="nav-icon">
+            <img src="assets/profile.png" alt="Profile" class="nav-icon">
+        </div>
+        </div>
+
+    </nav>
+
+<section class="product-detail-section">
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> / 
+    <a href="product-list.html">All Products</a> / 
+    <span>Golf Shirt</span>
+  </div>
+
+  <div class="product-detail-layout">
+
+    <!-- LEFT THUMBNAILS -->
+    <div class="thumbnail-column">
+      <img src="assets/golf-shirt1.jpg" class="thumbnail active-thumb" alt="Golf shirt view 1">
+      <img src="assets/golf-shirt2.jpg" class="thumbnail" alt="Golf shirt view 2">
+      <img src="assets/golf-shirt3.jpg" class="thumbnail" alt="Golf shirt view 3">
+      <img src="assets/golf-shirt4.jpg" class="thumbnail" alt="Golf shirt view 4">
+    </div>
+
+    <!-- MIDDLE THUMBNAILS -->
+    <div class="main-gallery">
+      <button class="gallery-arrow left-arrow">&lt;</button>
+
+      <div class="big-image-row">
+        <img src="assets/golf-shirt1.jpg" class="big-product-image" alt="Golf shirt large view 1">
+        <img src="assets/golf-shirt2.jpg" class="big-product-image" alt="Golf shirt large view 2">
+      </div>
+
+      <button class="gallery-arrow right-arrow">&gt;</button>
+    </div>
+
+    <!-- RIGHT INFORMATION -->
+    <div class="product-info">
+        <h1>GOLF SHIRT</h1>
+        <p class="price">AUD $35</p>
+
+        <p class="size-label">SIZE</p>
+
+        <div class="size-options">
+            <button>S</button>
+            <button>M</button>
+            <button>L</button>
+            <button>XL</button>
+            <button>XXL</button>
+        </div>
+
+        <button class="add-cart-btn">ADD TO CART</button>
+        <button class="checkout-btn">CHECKOUT NOW</button>
+        <div class="product-accordion">
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                DESCRIPTION
+                <span>+</span>
+                </button>
+                <div class="accordion-content">
+                <p>Premium golf shirt designed for comfort, movement, and everyday teamwear styling.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                SIZE GUIDE
+                <span>+</span>
+                </button>
+                <div class="accordion-content">
+                <p>Available in S, M, L, XL, and XXL.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                SHIPPING INFORMATION
+                <span>+</span>
+                </button>
+                <div class="accordion-content">
+                <p>Standard shipping applies. Delivery time may vary by location.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                FAQ
+                <span>+</span>
+                </button>
+                <div class="accordion-content">
+                <p>Contact our team for custom sizing, bulk orders, or club enquiries.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="related-products-section">
+
+  <div class="related-header">
+    <div class="line"></div>
+    <h2>OTHER PRODUCTS</h2>
+    <div class="line"></div>
+  </div>
+
+    <div class="related-products-grid">
+
+    <a href="product-detail.html" class="related-card">
+        <img src="assets/golf-shirt1.jpg" alt="Golf product 1">
+    </a>
+
+    <a href="product-detail-2.html" class="related-card">
+        <img src="assets/golf-shirt2.jpg" alt="Golf product 2">
+    </a>
+
+    <a href="product-detail-3.html" class="related-card">
+        <img src="assets/golf-shirt3.jpg" alt="Golf product 3">
+    </a>
+
+    <a href="product-detail-4.html" class="related-card">
+        <img src="assets/golf-shirt4.jpg" alt="Golf product 4">
+    </a>
+
+    <a href="product-detail-5.html" class="related-card">
+        <img src="assets/tennis-shorts1.jpg" alt="Golf product 5">
+    </a>
+
+    </div>
+
+  </div>
+<!-- NOTES: Change the picture for other products -->
+</section>
+
+<div class="cart-popup">
+
+  <h2>CART</h2>
+
+  <div class="cart-items">
+
+    <div class="cart-item">
+      <img src="assets/golf-shirt1.jpg" alt="Golf shirt">
+
+      <div class="cart-item-info">
+        <h3>GOLF SHIRT</h3>
+        <p>SIZE: M<br>QTY: 2</p>
+
+        <div class="cart-item-bottom">
+          <a href="#">Edit</a>
+          <span>AUD $35</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cart-summary">
+    <div class="subtotal-row">
+      <span>Bag Subtotal</span>
+      <span>AUD $70</span>
+    </div>
+
+    <div class="cart-buttons">
+      <a href="cart.html" class="view-cart-btn">VIEW CART</a>
+      <a href="checkout.html" class="cart-checkout-btn">CHECKOUT NOW</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
