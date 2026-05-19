@@ -5,201 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product List | ICON SPORTSWEAR</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="./fonts/poppins.css">
   <link rel="stylesheet" href="./fonts/chillax.css">
 </head>
 
 <body class="product-list-page">
-    <!-- NAVBAR -->
-    <nav class="navbar product-navbar">
 
-        <div class="nav-left">
-        <a href="index.html" class="nav-pill">About</a>
-        <a href="#" class="nav-pill">Custom Teamwear</a>
-        <a href="product-list.html" class="nav-pill">Product List</a>
-        </div>
+<nav class="shop-navbar">
 
-        <img src="assets/icon-logo.png" alt="ICON logo" class="nav-logo">
+  <div class="navbar-top">
 
-        <div class="nav-right">
-        <a href="#" class="nav-pill">Club Zone</a>
-        <a href="#" class="nav-pill">Enquiry Form</a>
-        <a href="#" class="nav-pill">Locations</a>
+    <!-- LOGO -->
+    <a href="index.html" class="logo-link">
+      <img src="assets/icon-logo.png" alt="ICON logo" class="shop-logo">
+    </a>
 
-        <div class="icon-group">
-            <img src="assets/shopping-cart.svg" alt="Cart" class="nav-icon">
-            <img src="assets/profile.png" alt="Profile" class="nav-icon">
-        </div>
-        </div>
+    <!-- SEARCH -->
+    <div class="nav-search">
+      <img src="assets/search.png" alt="Search icon">
 
-    </nav>
-  <main class="product-main">
+      <input type="text" placeholder="Search">
+    </div>
 
-    <p class="breadcrumb">Home / All Products</p>
+    <!-- RIGHT ICONS -->
+    <div class="nav-actions">
 
-    <h1 class="all-products-title">All Products</h1>
+      <a href="#">
+        <img src="assets/shopping cart.png" alt="Cart">
+      </a>
 
-    </main>
+      <a href="#">
+        <img src="assets/favorites.png" alt="Favorites">
+      </a>
 
-<section class="product-filter-box">
+      <a href="#">
+        <img src="assets/profile.png" alt="Profile">
+      </a>
 
-  <div class="search-bar">
-    <img src="assets/search.png" alt="Search icon">
-    <input type="text" placeholder="Search Products">
+    </div>
+
   </div>
 
-  <div class="category-icons">
-    <div class="category-item">
-      <img src="assets/cricket-icon.svg" alt="Cricket">
-    </div>
+  <!-- BOTTOM NAV -->
+  <div class="navbar-tabs">
 
-    <div class="category-item">
-      <img src="assets/golf-icon.svg" alt="Golf">
-    </div>
+    <a href="index.html">About</a>
 
-    <div class="category-item">
-      <img src="assets/tennis-icon.svg" alt="Tennis">
-    </div>
+    <a href="#">Custom Teamwear</a>
 
-    <div class="category-item">
-      <img src="assets/soccer-icon.svg" alt="Soccer">
-    </div>
+    <a href="product-list.html">Product List</a>
 
-    <div class="category-item">
-      <img src="assets/rugby-icon.svg" alt="Rugby">
-    </div>
+    <a href="#">Club Zone</a>
 
-    <div class="category-item">
-      <img src="assets/netball-icon.svg" alt="Netball">
-    </div>
+    <a href="#">Enquiry Form</a>
+
+    <a href="#">Locations</a>
+
   </div>
 
+</nav>
+ 
+<main class="product-main">
+  <p class="breadcrumb">
+    <a href="index.html">Home</a> / All Products
+  </p>
+  <h1 class="all-products-title">All Products</h1>
+</main>
+
+<section class="category-bar">
+  <button>CRICKET</button>
+  <button>GOLF</button>
+  <button>TENNIS</button>
+  <button>SOCCER</button>
+  <button>RUGBY</button>
+  <button>NETBALL</button>
 </section>
 
 <section class="products-section">
 
-    <div class="products-topbar">
-
+  <div class="products-topbar">
     <p class="items-count">35 Items</p>
 
     <div class="sort-by">
-
-        <span>Sort By</span>
-
-        <svg class="sort-arrow" viewBox="0 0 36 36">
+      <span>Sort By</span>
+      <svg class="sort-arrow" viewBox="0 0 36 36">
         <path d="M8.9 13.3L17.8 22.2L26.7 13.3"
-            stroke="black"
-            stroke-width="2.9"
-            stroke-linecap="round"
-            stroke-linejoin="round"/>
-        </svg>
-
+          stroke="black"
+          stroke-width="2.9"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+      </svg>
     </div>
-
-    </div>
+  </div>
 
   <div class="products-grid">
 
-    <div class="product-card">
-      <img src="assets/golf-shirt.png" alt="Golf Shirt">
-
+    <a href="product-detail.html" class="product-card">
+      <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
       <h3>Golf Shirt</h3>
       <span>$35</span>
-    </div>
+    </a>
 
-    <div class="product-card">
-      <img src="assets/tennis-shorts.png" alt="Tennis shorts">
-
+    <a href="product-detail-2.html" class="product-card">
+      <img src="assets/tennis-shorts1.jpg" alt="Tennis shorts">
       <h3>Tennis shorts</h3>
       <span>$28</span>
-    </div>
+    </a>
 
-    <div class="product-card">
-      <img src="assets/golf-skirt.png" alt="Golf Skirt">
-
+    <a href="product-detail-3.html" class="product-card">
+      <img src="assets/golf-skirt1.jpg" alt="Golf Skirt">
       <h3>Golf Skirt</h3>
       <span>$28</span>
-    </div>
+    </a>
 
-    <div class="product-card">
-      <img src="assets/soccer-jersey.png" alt="Soccer Jersey">
-
+    <a href="product-detail-4.html" class="product-card">
+      <img src="assets/soccer-jersey1.jpg" alt="Soccer Jersey">
       <h3>Soccer Jersey</h3>
       <span>$35</span>
-    </div>
+    </a>
 
-    <div class="product-card">
-      <img src="assets/golf-shirt.png" alt="Golf Shirt">
-
+    <a href="product-detail.html" class="product-card">
+      <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
       <h3>Golf Shirt</h3>
       <span>$35</span>
-    </div>
+    </a>
 
-    <div class="product-card">
-      <img src="assets/tennis-shorts.png" alt="Tennis shorts">
-
+    <a href="product-detail-2.html" class="product-card">
+      <img src="assets/tennis-shorts1.jpg" alt="Tennis shorts">
       <h3>Tennis shorts</h3>
       <span>$28</span>
-    </div>
+    </a>
 
-    <div class="product-card">
-      <img src="assets/golf-skirt.png" alt="Golf Skirt">
-
+    <a href="product-detail-3.html" class="product-card">
+      <img src="assets/golf-skirt1.jpg" alt="Golf Skirt">
       <h3>Golf Skirt</h3>
       <span>$28</span>
-    </div>
+    </a>
 
-    <div class="product-card">
-      <img src="assets/soccer-jersey.png" alt="Soccer Jersey">
-
+    <a href="product-detail-4.html" class="product-card">
+      <img src="assets/soccer-jersey1.jpg" alt="Soccer Jersey">
       <h3>Soccer Jersey</h3>
       <span>$35</span>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/golf-shirt.png" alt="Golf Shirt">
-
-      <h3>Golf Shirt</h3>
-      <span>$35</span>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/tennis-shorts.png" alt="Tennis shorts">
-
-      <h3>Tennis shorts</h3>
-      <span>$28</span>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/golf-skirt.png" alt="Golf Skirt">
-
-      <h3>Golf Skirt</h3>
-      <span>$28</span>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/soccer-jersey.png" alt="Soccer Jersey">
-
-      <h3>Soccer Jersey</h3>
-      <span>$35</span>
-    </div>
-
+    </a>
+    
   </div>
-
 </section>
-
-<div class="product-pagination">
-
-  <button class="page-btn prev">
-    Prev
-  </button>
-
-  <button class="page-btn next">
-    Next
-  </button>
-
-</div>
 
 <footer class="footer">
 
