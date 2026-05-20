@@ -9,243 +9,164 @@ body {
   background-color: #F3F5F7;
 }
 
-/* HERO */
-.hero {
+/* ===================== */
+/* HERO SECTION */
+/* ===================== */
+
+.hero-section {
   position: relative;
-  height: 800px;
-
-  background-image: url("../assets/sky.png");
-  background-size: cover;
-  background-position: center;
-}
-
-/* GIRL */
-.girl-hero {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 620px;
-  z-index: 2;
-}
-
-/* TEXT */
-.hero-text {
-  position: absolute;
-  transform: translateX(-50%);
-
-  font-family: 'Chillax', sans-serif;
-  font-weight: 700;
-  font-size: 120px;
-
-  color: rgba(0, 62, 147, 0.19);
-  -webkit-text-stroke: 2px #F4F5F7;
-
-  white-space: nowrap;
-}
-
-/* TEXT POSITIONS */
-.hero-train {
-  top: 42%;
-  left: 20%;
-  z-index: 1;
-}
-
-.hero-in {
-  top: 42%;
-  left: 50%;
-  z-index: 4;
-}
-
-.hero-style {
-  top: 42%;
-  left: 80%;
-  z-index: 1;
-}
-
-/* BLUE BOX */
-.blue-box {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-
-  top: 72%;
 
   width: 1440px;
-  height: 690px;
+  height: 900px;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  background: #000;
+}
+
+/* HERO IMAGE */
+.hero-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* OVERLAY CONTENT */
+.hero-overlay {
+  position: absolute;
+
+  left: 58px;
+  top: 230px;
+
+  width: 1300px;
+
+  z-index: 5;
+}
+
+/* TRAIN IN STYLE */
+.hero-title {
+  margin: 0;
+
+  color: #F4F5F7;
+
+  font-family: 'Chillax', sans-serif;
+  font-size: 146.552px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.9;
+
+  text-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+
+/* WITH ICON SPORTS */
+.hero-subtitle {
+  margin-top: 18px;
+  margin-bottom: 55px;
+
+  color: #F4F5F7;
+
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  font-family: 'Chillax', sans-serif;
+  font-size: 44.958px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  text-decoration-line: underline;
+}
+
+/* BUTTON WRAPPER */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+
+  gap: 60px;
+
+  width: 100%;
+
+  margin-top: 55px;
+}
+
+/* BUTTON */
+.hero-btn {
+  width: 360px;
+  height: 78px;
+
+  border-radius: 38.575px;
+  border: 1px solid #000;
 
   background: #003E93;
 
-  border-radius: 48px;
-
-  box-shadow: 0 3.162px 6.324px rgba(0, 0, 0, 1);
-
-  z-index: 3;
-}
-
-/* CTA BUTTONS */
-.cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 70px;
-
-  position: absolute;
-  top: 90px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  z-index: 4;
-}
-
-/* SHARED BUTTON STYLE */
-.btn-outline,
-.btn-solid {
-  width: 567px;
-  height: 83px;
-
-  border-radius: 48.947px;
-
-  font-family: 'Chillax', sans-serif;
-  font-size: 40px;
-  font-weight: 700;
-
-  color: #F4F5F7;
-
-  white-space: nowrap;
-  text-align: center;
-
-  cursor: pointer;
-
-  box-shadow: 3px 4px 6px rgba(0, 0, 0, 1);
-}
-
-/* LEFT BUTTON */
-.btn-outline {
-  border: 1.632px solid #F4F5F7;
-
-  background: transparent;
-}
-
-/* RIGHT BUTTON */
-.btn-solid {
-  border: none;
-
-  background: #BFE804;
-}
-
-/* GREEN STRIP */
-.green-strip {
-  position: absolute;
-  top: 235px;  
-
-  width: 100%;
-  height: 50px;
-
-  background-color: #C6E600;
+  box-shadow: 2.364px 3.152px 4.729px 0 #000;
 
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  color: #F4F5F7;
+
+  font-family: 'Chillax', sans-serif;
+  font-size: 31.524px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  text-decoration: none;
+
+  transition: all 0.25s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* GREEN STRIP */
+.hero-strip {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 48px;
+
+  background: #C6E600;
 
   overflow: hidden;
+
+  display: flex;
+  align-items: center;
 }
 
-.green-strip p {
-  font-size: 30px;
-  font-style: italic;
-  color: white;
-
+/* MOVING TEXT */
+.strip-track {
   white-space: nowrap;
 
-  animation: scrollText 12s linear infinite;
-}
-
-@keyframes scrollText {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* NUMBER SECTION */
-
-.number-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  margin-top: 330px;
-
-  padding: 0 70px;
-}
-
-.number-box {
-  width: 440px;
-  height: 175px;
-
-  padding: 24px 36px;
-
-  border-radius: 74px;
-
-  border: 2.4px solid rgba(244, 245, 247, 0.1);
-
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
-
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 1);
-
   color: #F4F5F7;
 
-}
-
-.center-card {
-  width: 350px;
-  height: 175px;
-
-  margin-top: 140px;
-}
-
-.number-box h2 {
-  font-family: 'Poppins', sans-serif;
-
-  font-size: 80px;
+  font-family: Poppins;
+  font-size: 22px;
   font-style: italic;
-  font-weight: 700;
-
-  line-height: 1;
-
-  color: #F4F5F7;
-
-  text-align: center;
-  width: 100%;
-}
-
-.center-card h2 {
-  font-size: 80px;
-}
-
-.number-line {
-  width: 90%;
-  height: 4px;
-
-  background-color: #F4F5F7;
-
-  margin: 2px auto 6px;
-}
-
-.number-box p {
-  font-family: 'Poppins', sans-serif;
-
-  font-size: 25px;
   font-weight: 400;
 
-  color: #F4F5F7;
-  padding-left: 20px;
-
+  animation: marquee 18s linear infinite;
 }
 
-.center-card p {
-  font-size: 24px;
-  text-align: left;
-  padding-left: 18px;
+/* ANIMATION */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 /* SPORTS SECTION */
@@ -517,7 +438,7 @@ body {
 
   padding: 5px 24px;
 
-  color: #F4F5F7;
+  color: #003E93;
   font-family: Poppins;
   font-size: 25.919px;
   font-weight: 700;
@@ -644,428 +565,4 @@ body {
 /* RIGHT BUTTON */
 .page-btn.next {
   border-radius: 0 10px 10px 0;
-}
-
-/* ===================== */
-/* PRODUCT DETAIL PAGE */
-/* ===================== */
-
-.product-detail-section {
-  background: #F3F5F7;
-  padding: 42px 48px 0;
-}
-
-.breadcrumb {
-  font-family: Poppins;
-  font-size: 17px;
-  color: #000;
-  text-decoration: none;
-  margin-bottom: 14px;
-  position: relative;
-  z-index: 2;
-}
-
-.breadcrumb a {
-  color: #000;
-  text-decoration: underline;
-}
-
-.product-detail-layout {
-  display: grid;
-  grid-template-columns: 104.459px 850px 300px;
-  gap: 18px;
-  align-items: start;
-}
-
-/* LEFT THUMBNAILS */
-.thumbnail-column {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.thumbnail {
-  width: 104.459px;
-  height: 174.42px;
-  object-fit: cover;
-  border: 2px solid transparent;
-  box-sizing: border-box;
-}
-
-.active-thumb {
-  border: 2px solid #000;
-}
-
-/* MAIN IMAGE AREA */
-.main-gallery {
-  position: relative;
-}
-
-.big-image-row {
-  display: flex;
-  gap: 0;
-}
-
-.big-product-image {
-  width: 416.874px;
-  height: 696.073px;
-  object-fit: cover;
-}
-
-/* ARROWS */
-.gallery-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: none;
-
-  background: #000;
-  color: #fff;
-  font-size: 28px;
-  cursor: pointer;
-
-  z-index: 5;
-}
-
-.left-arrow {
-  left: 12px;
-}
-
-.right-arrow {
-  right: 12px;
-}
-
-/* PRODUCT INFO */
-.product-info {
-  padding-top: 70px;
-}
-
-.product-info h1 {
-  color: #003E93;
-  font-family: Poppins;
-  font-size: 35px;
-  font-weight: 700;
-  margin: 0 0 5px;
-}
-
-.price {
-  color: #002752;
-  font-family: Poppins;
-  font-size: 20px;
-  font-weight: 400;
-  margin: 0 0 25px;
-}
-
-.size-label {
-  color: #000;
-  font-family: Poppins;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.size-options {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.size-options button {
-  border-radius: 5.502px;
-  border: 1.678px solid rgba(0, 0, 0, 0.70);
-
-  background: transparent;
-  color: #000;
-
-  font-family: Poppins;
-  font-size: 20.976px;
-  font-weight: 400;
-
-  padding: 4px 15px;
-  cursor: pointer;
-}
-
-.add-cart-btn,
-.checkout-btn {
-  width: 320px;
-  height: 45px;
-
-  border: none;
-  border-radius: 10px;
-
-  box-shadow: 2.051px 5.129px 4.103px 0 rgba(0, 0, 0, 0.25);
-
-  color: #F4F5F7;
-  font-family: Poppins;
-  font-size: 20px;
-  font-weight: 700;
-
-  cursor: pointer;
-  display: block;
-}
-
-.add-cart-btn {
-  background: #BFE804;
-  margin-top: 25px;
-  margin-bottom: 12px;
-}
-
-.checkout-btn {
-  background: #003E93;
-}
-
-.product-accordion {
-  margin-top: 28px;
-  width: 340px;
-}
-
-.accordion-item {
-  border-bottom: 2.818px solid rgba(0, 0, 0, 0.3);
-}
-
-.accordion-header {
-  width: 100%;
-  padding: 10px 0;
-
-  background: transparent;
-  border: none;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  color: #000;
-  font-family: Poppins;
-  font-size: 20px;
-  font-weight: 400;
-
-  cursor: pointer;
-}
-
-.accordion-header span {
-  color: rgba(0, 39, 82, 0.60);
-  font-family: Poppins;
-  font-size: 33.268px;
-  font-weight: 400;
-  line-height: 1;
-}
-
-.accordion-content {
-  display: none;
-  padding-bottom: 12px;
-}
-
-.accordion-content p {
-  margin: 0;
-
-  color: #000;
-  font-family: Poppins;
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.related-products-section {
-  margin-top: 10px;
-  padding: 0 60px 90px;
-}
-
-.related-header {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 25px;
-}
-
-.related-header h2 {
-  color: #003E93;
-  font-family: Poppins;
-  font-size: 35px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.line {
-  flex: 1;
-  height: 2px;
-  background: rgba(0, 0, 0, 0.25);
-}
-
-.related-products-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0;
-}
-
-.related-card {
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.related-card img {
-  width: 100%;
-  height: 440px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.related-card:hover img {
-  transform: scale(1.03);
-}
-
-.cart-popup {
-  display: none;
-
-  position: fixed;
-  top: 0;
-  right: 0;
-
-  width: 425px;
-  height: 100vh;
-
-  background: #F4F5F7;
-
-  z-index: 9999;
-
-  padding: 28px 26px 40px;
-  box-sizing: border-box;
-
-  overflow-y: auto;
-}
-
-/* CART TITLE */
-.cart-popup h2 {
-  text-align: center;
-
-  color: #000;
-  font-family: Poppins;
-  font-size: 22.522px;
-  font-weight: 400;
-
-  margin-bottom: 40px;
-}
-
-/* CART ITEM */
-.cart-item {
-  display: flex;
-  gap: 22px;
-
-  padding-bottom: 32px;
-  margin-bottom: 32px;
-
-  border-bottom: 2px solid rgba(0, 0, 0, 0.25);
-}
-
-/* PRODUCT IMAGE */
-.cart-item img {
-  width: 161px;
-  height: 258.863px;
-
-  object-fit: cover;
-}
-
-/* RIGHT SIDE INFO */
-.cart-item-info {
-  flex: 1;
-  padding-top: 38px;
-}
-
-/* PRODUCT TITLE */
-.cart-item-info h3 {
-  color: #000;
-  font-family: Poppins;
-  font-size: 27.29px;
-  font-weight: 700;
-
-  margin: 0 0 26px;
-}
-
-/* DETAILS */
-.cart-item-info p {
-  color: #000;
-  font-family: Poppins;
-  font-size: 15.992px;
-  font-weight: 400;
-  line-height: 1.4;
-
-  margin-bottom: 28px;
-}
-
-/* EDIT + PRICE */
-.cart-item-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cart-item-bottom a,
-.cart-item-bottom span {
-  color: #000;
-  font-family: Poppins;
-  font-size: 15.992px;
-  font-weight: 400;
-}
-
-.cart-item-bottom a {
-  text-decoration: underline;
-}
-
-/* SUBTOTAL */
-.cart-summary {
-  margin-top: 10px;
-}
-
-.subtotal-row {
-  display: flex;
-  justify-content: space-between;
-
-  border-top: 2px solid rgba(0, 0, 0, 0.25);
-
-  padding-top: 14px;
-  margin-bottom: 18px;
-
-  color: #000;
-  font-family: Poppins;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-/* BUTTONS */
-.cart-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.view-cart-btn,
-.cart-checkout-btn {
-  height: 45px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 10px;
-
-  color: #F4F5F7;
-  text-decoration: none;
-
-  font-family: Poppins;
-  font-size: 18px;
-  font-weight: 700;
-
-  box-shadow: 2.051px 5.129px 4.103px 0 rgba(0, 0, 0, 0.25);
-}
-
-.view-cart-btn {
-  width: 43%;
-  background: #BFE804;
-}
-
-.cart-checkout-btn {
-  width: 57%;
-  background: #003E93;
 }

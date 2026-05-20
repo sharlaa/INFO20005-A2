@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | ICON SPORTSWEAR</title>
+
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/checkout.css">
+
+  <link rel="stylesheet" href="./fonts/poppins.css">
+</head>
+
+<body class="checkout-body">
+
+<nav class="shop-navbar">
+  <div class="navbar-top">
+    <a href="index.html" class="logo-link">
+      <img src="assets/icon-logo.png" alt="ICON logo" class="shop-logo">
+    </a>
+
+    <div class="nav-search">
+      <img src="assets/search.png" alt="Search icon">
+      <input type="text" placeholder="Search">
+    </div>
+
+    <div class="nav-actions">
+      <a href="cart.html">
+        <img src="assets/shopping cart.svg" alt="Cart">
+      </a>
+
+      <a href="#">
+        <img src="assets/profile.svg" alt="Profile">
+      </a>
+    </div>
+  </div>
+
+  <div class="navbar-tabs">
+    <a href="index.html">About</a>
+    <a href="#">Custom Teamwear</a>
+    <a href="product-list.html">Product List</a>
+    <a href="#">Club Zone</a>
+    <a href="#">Enquiry Form</a>
+    <a href="#">Locations</a>
+  </div>
+</nav>
+
+<main class="checkout-page">
+
+  <section class="checkout-left">
+
+    <h1>Checkout</h1>
+
+    <section class="checkout-section">
+      <h2>Customer Information</h2>
+
+      <div class="form-grid two">
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Phone Number">
+      </div>
+    </section>
+
+    <section class="checkout-section">
+      <h2>Delivery Address</h2>
+
+      <div class="form-grid">
+        <input class="full" type="text" placeholder="Address">
+        <input class="full" type="text" placeholder="Apartment, suite, etc. (optional)">
+
+        <input type="text" placeholder="Suburb">
+
+        <select>
+          <option>Victoria</option>
+          <option>New South Wales</option>
+          <option>Queensland</option>
+          <option>Western Australia</option>
+        </select>
+
+        <input type="text" placeholder="Postcode">
+
+        <input class="full" type="tel" placeholder="Phone">
+      </div>
+
+      <label class="checkbox-row">
+        <input type="checkbox">
+        <span>Text me with news and offers</span>
+      </label>
+    </section>
+
+    <section class="checkout-section">
+      <h2>Payment Method</h2>
+
+      <div class="payment-options">
+        <label class="payment-option">
+          <input type="radio" name="payment" checked>
+          <span>Bank Card</span>
+        </label>
+
+        <label class="payment-option">
+          <input type="radio" name="payment">
+          <span>Payment Upon Receipt</span>
+        </label>
+      </div>
+
+      <div class="card-fields">
+        <input class="full" type="text" placeholder="Card Number">
+
+        <div class="form-grid two">
+          <input type="text" placeholder="Expiration Date (MM / YY)">
+          <input type="text" placeholder="Security Code">
+        </div>
+
+        <input class="full" type="text" placeholder="Name on Card">
+      </div>
+    </section>
+
+  </section>
+
+  <aside class="checkout-summary">
+
+    <div class="summary-card">
+
+      <div class="summary-product">
+        <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
+
+        <div class="summary-info">
+          <div class="product-top">
+            <h3>GOLF SHIRT</h3>
+            <span class="remove-btn">×</span>
+          </div>
+
+          <p class="product-color">GREEN / WHITE</p>
+          <p class="product-price">$35</p>
+
+          <div class="product-detail-row">
+            <div class="dropdown-detail">
+              <span>Size M</span>
+              <span>⌄</span>
+            </div>
+
+            <div class="dropdown-detail">
+              <span>Qty 2</span>
+              <span>⌄</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="discount-box">
+        <span>Add a discount code</span>
+
+        <div class="discount-right">
+          <span>Apply</span>
+          <span>×</span>
+        </div>
+      </div>
+
+      <div class="summary-total-box">
+
+        <div class="summary-line">
+          <span>Items:</span>
+          <span>$70</span>
+        </div>
+
+        <div class="summary-line">
+          <span>Shipping:</span>
+          <span>TBC</span>
+        </div>
+
+        <div class="summary-final">
+          <span>Total to pay</span>
+          <span>$70</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+</main>
+
+</body>
+</html>

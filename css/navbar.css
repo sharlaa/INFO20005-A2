@@ -47,7 +47,7 @@
 }
 
 .shop-logo {
-  width: 165px;
+  width: 150px;
   display: block;
 
   position: relative;
@@ -144,4 +144,14 @@
 
 .navbar-tabs a:hover {
   opacity: 0.55;
+}
+
+.nav-actions img[alt="Cart"] {
+  width: 23px;
+  height: 23px;
+}
+
+.nav-actions img[alt="Profile"] {
+  width: 26px;
+  height: 26px;
 }
