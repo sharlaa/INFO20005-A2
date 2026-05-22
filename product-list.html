@@ -5,176 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product List | ICON SPORTSWEAR</title>
 
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/product-list.css">
   <link rel="stylesheet" href="./fonts/poppins.css">
   <link rel="stylesheet" href="./fonts/chillax.css">
 </head>
 
-<body class="product-list-page">
+<body class="product-list-body">
 
-<nav class="shop-navbar">
+  <!-- NAVBAR -->
+  <nav class="shop-navbar">
 
-  <div class="navbar-top">
+    <div class="navbar-top">
 
-    <!-- LOGO -->
-    <a href="index.html" class="logo-link">
-      <img src="assets/icon-logo.png" alt="ICON logo" class="shop-logo">
-    </a>
-
-    <!-- SEARCH -->
-    <div class="nav-search">
-      <img src="assets/search.png" alt="Search icon">
-
-      <input type="text" placeholder="Search">
-    </div>
-
-    <!-- RIGHT ICONS -->
-    <div class="nav-actions">
-
-      <a href="#">
-        <img src="assets/shopping cart.svg" alt="Cart">
-      </a>
-      <a href="#">
-        <img src="assets/profile.svg" alt="Profile">
+      <a href="index.html" class="logo-link">
+        <img src="assets/icon-logo.png" alt="ICON logo" class="shop-logo">
       </a>
 
+      <div class="nav-search">
+        <img src="assets/search.png" alt="Search icon">
+        <input type="text" placeholder="Search">
+      </div>
+
+      <div class="nav-actions">
+        <a href="cart.html">
+          <img src="assets/shopping cart.png" alt="Cart">
+        </a>
+
+        <a href="#">
+          <img src="assets/profile.png" alt="Profile">
+        </a>
+      </div>
+
     </div>
 
-  </div>
-
-  <!-- BOTTOM NAV -->
-  <div class="navbar-tabs">
-
-    <a href="index.html">About</a>
-
-    <a href="#">Custom Teamwear</a>
-
-    <a href="product-list.html">Product List</a>
-
-    <a href="#">Club Zone</a>
-
-    <a href="#">Enquiry Form</a>
-
-    <a href="#">Locations</a>
-
-  </div>
-
-</nav>
- 
-<main class="product-main">
-  <p class="breadcrumb">
-    <a href="index.html">Home</a> / All Products
-  </p>
-  <h1 class="all-products-title">All Products</h1>
-</main>
-
-<section class="category-bar">
-  <button>CRICKET</button>
-  <button>GOLF</button>
-  <button>TENNIS</button>
-  <button>SOCCER</button>
-  <button>RUGBY</button>
-  <button>NETBALL</button>
-</section>
-
-<section class="products-section">
-
-  <div class="products-topbar">
-    <p class="items-count">35 Items</p>
-
-    <div class="sort-by">
-      <span>Sort By</span>
-      <svg class="sort-arrow" viewBox="0 0 36 36">
-        <path d="M8.9 13.3L17.8 22.2L26.7 13.3"
-          stroke="black"
-          stroke-width="2.9"
-          stroke-linecap="round"
-          stroke-linejoin="round"/>
-      </svg>
+    <div class="navbar-tabs">
+      <a href="index.html">About</a>
+      <a href="#">Custom Teamwear</a>
+      <a href="product-list.html">Product List</a>
+      <a href="#">Club Zone</a>
+      <a href="#">Enquiry Form</a>
+      <a href="#">Locations</a>
     </div>
-  </div>
 
-  <div class="products-grid">
+  </nav>
 
-    <a href="product-detail.html" class="product-card">
-      <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
-      <h3>Golf Shirt</h3>
-      <span>$35</span>
-    </a>
+  <!-- PRODUCT LIST PAGE -->
+  <main class="product-list-page">
 
-    <a href="product-detail-2.html" class="product-card">
-      <img src="assets/tennis-shorts1.jpg" alt="Tennis shorts">
-      <h3>Tennis shorts</h3>
-      <span>$28</span>
-    </a>
+    <section class="product-main">
 
-    <a href="product-detail-3.html" class="product-card">
-      <img src="assets/golf-skirt1.jpg" alt="Golf Skirt">
-      <h3>Golf Skirt</h3>
-      <span>$28</span>
-    </a>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span> / All Products</span>
+      </div>
 
-    <a href="product-detail-4.html" class="product-card">
-      <img src="assets/soccer-jersey1.jpg" alt="Soccer Jersey">
-      <h3>Soccer Jersey</h3>
-      <span>$35</span>
-    </a>
+      <h1 class="all-products-title">All Products</h1>
 
-    <a href="product-detail.html" class="product-card">
-      <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
-      <h3>Golf Shirt</h3>
-      <span>$35</span>
-    </a>
+    </section>
 
-    <a href="product-detail-2.html" class="product-card">
-      <img src="assets/tennis-shorts1.jpg" alt="Tennis shorts">
-      <h3>Tennis shorts</h3>
-      <span>$28</span>
-    </a>
+    <section class="category-bar">
+      <button class="category-btn">CRICKET</button>
+      <button class="category-btn">GOLF</button>
+      <button class="category-btn">TENNIS</button>
+      <button class="category-btn">SOCCER</button>
+      <button class="category-btn">RUGBY</button>
+      <button class="category-btn">NETBALL</button>
+    </section>
 
-    <a href="product-detail-3.html" class="product-card">
-      <img src="assets/golf-skirt1.jpg" alt="Golf Skirt">
-      <h3>Golf Skirt</h3>
-      <span>$28</span>
-    </a>
+    <section class="products-section">
 
-    <a href="product-detail-4.html" class="product-card">
-      <img src="assets/soccer-jersey1.jpg" alt="Soccer Jersey">
-      <h3>Soccer Jersey</h3>
-      <span>$35</span>
-    </a>
-    
-  </div>
-</section>
+      <div class="products-topbar">
 
-<footer class="footer">
+        <p class="items-count">35 Items</p>
 
-  <div class="store-info">
-    <h3>STORE INFORMATION</h3>
-    <p>
-      ICON HQ<br>
-      850 Cooper street<br>
-      Somerton 3062<br>
-      Victoria<br>
-      Australia<br>
-      yash@icon-sports.com.au<br>
-      ABN- 25 615 676 045
-    </p>
-  </div>
+        <button class="sort-by">
+          <span>Sort By</span>
 
-  <div class="newsletter">
-    <h3>Subscribe to our newsletter</h3>
+          <svg class="sort-arrow" viewBox="0 0 36 36">
+            <path d="M8.9 13.3L17.8 22.2L26.7 13.3"
+              stroke="black"
+              stroke-width="2.9"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+          </svg>
+        </button>
 
-    <form class="newsletter-form">
-      <input type="email" placeholder="Enter your email">
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
+      </div>
 
-  <img src="assets/icon-logo.png" alt="ICON logo" class="footer-logo">
+      <div class="products-grid">
 
-</footer>
+        <a href="product-detail1.html" class="product-card">
+          <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
+          <h3>Golf Shirt</h3>
+          <span>$35</span>
+        </a>
 
-</body>
+        <a href="product-detail2.html" class="product-card">
+          <img src="assets/tennis-shorts1.jpg" alt="Tennis shorts">
+          <h3>Tennis shorts</h3>
+          <span>$28</span>
+        </a>
+
+        <a href="product-detail-3.html" class="product-card">
+          <img src="assets/golf-skirt1.jpg" alt="Golf Skirt">
+          <h3>Golf Skirt</h3>
+          <span>$28</span>
+        </a>
+
+        <a href="product-detail-4.html" class="product-card">
+          <img src="assets/soccer-jersey1.jpg" alt="Soccer Jersey">
+          <h3>Soccer Jersey</h3>
+          <span>$35</span>
+        </a>
+
+        <a href="product-detail.html" class="product-card">
+          <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
+          <h3>Golf Shirt</h3>
+          <span>$35</span>
+        </a>
+
+        <a href="product-detail-2.html" class="product-card">
+          <img src="assets/tennis-shorts1.jpg" alt="Tennis shorts">
+          <h3>Tennis shorts</h3>
+          <span>$28</span>
+        </a>
+
+        <a href="product-detail-3.html" class="product-card">
+          <img src="assets/golf-skirt1.jpg" alt="Golf Skirt">
+          <h3>Golf Skirt</h3>
+          <span>$28</span>
+        </a>
+
+        <a href="product-detail-4.html" class="product-card">
+          <img src="assets/soccer-jersey1.jpg" alt="Soccer Jersey">
+          <h3>Soccer Jersey</h3>
+          <span>$35</span>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+  </body>
 </html>

@@ -86,7 +86,7 @@ body {
   display: flex;
   justify-content: center;
 
-  gap: 60px;
+  gap: 70px;
 
   width: 100%;
 
@@ -95,14 +95,13 @@ body {
 
 /* BUTTON */
 .hero-btn {
-  width: 360px;
-  height: 78px;
+  width: 430px;
+  height: 84px;
 
-  border-radius: 38.575px;
+  border-radius: 42px;
   border: 1px solid #000;
 
   background: #003E93;
-
   box-shadow: 2.364px 3.152px 4.729px 0 #000;
 
   display: flex;
@@ -113,20 +112,47 @@ body {
 
   font-family: 'Chillax', sans-serif;
   font-size: 31.524px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
 
   text-decoration: none;
 
-  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.hero-btn::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: #BFE804;
+
+  transition: left 0.35s ease;
+
+  z-index: -1;
+}
+
+.hero-btn:hover::before {
+  left: 0;
 }
 
 .hero-btn:hover {
+  color: #003E93;
   transform: translateY(-3px);
 }
 
-/* GREEN STRIP */
+/* ========================= */
+/* GREEN MOVING STRIP */
+/* ========================= */
+
 .hero-strip {
   position: absolute;
 
@@ -134,32 +160,48 @@ body {
   bottom: 0;
 
   width: 100%;
-  height: 48px;
+  height: 68px;
 
-  background: #C6E600;
+  background: #BFE804;
 
   overflow: hidden;
 
   display: flex;
   align-items: center;
+
+  z-index: 20;
 }
 
-/* MOVING TEXT */
-.strip-track {
-  white-space: nowrap;
+/* MOVING TRACK */
+.hero-strip-track {
+  display: flex;
+  align-items: center;
+
+  width: max-content;
+
+  animation: scroll-strip 18s linear infinite;
+}
+
+/* TEXT */
+.hero-strip-track p {
+  margin: 0;
+
+  padding-top: 4px;
+  padding-right: 45px;
 
   color: #F4F5F7;
 
-  font-family: Poppins;
-  font-size: 22px;
+  font-family: Poppins, sans-serif;
+  font-size: 30px;
   font-style: italic;
   font-weight: 400;
+  line-height: 1;
 
-  animation: marquee 18s linear infinite;
+  white-space: nowrap;
 }
 
 /* ANIMATION */
-@keyframes marquee {
+@keyframes scroll-strip {
   from {
     transform: translateX(0);
   }
@@ -169,70 +211,206 @@ body {
   }
 }
 
-/* SPORTS SECTION */
-.sports-section {
-  padding: 130px 70px 140px;
+/* ===================== */
+/* STATS SECTION */
+/* ===================== */
+
+.stats-section {
+  width: 1440px;
+  margin: 0 auto;
+
+  padding: 70px 0 0;
+
+  background: #F4F5F7;
 }
 
-.sports-header {
+.stats-box {
+  width: 1220px;
+  height: 551px;
+
+  margin: 0 auto;
+
+  background: #003E93;
+
+  border-radius: 60px;
+
+  padding: 38px 65px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  filter: drop-shadow(0 13.625px 13.625px rgba(0, 0, 0, 0.25));
+}
+
+/* ROWS */
+.stats-top-row,
+.stats-bottom-row {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+/* SHARED WIDTH SYSTEM */
+.card-small {
+  width: 274.827px;
+}
+
+.card-medium {
+  width: 426.978px;
+}
+
+.card-large {
+  width: 359.327px;
+}
+
+/* IMAGE CARDS */
+.stats-img {
+  height: 221.503px;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 44.663px;
+  border: 1.918px solid rgba(244, 245, 247, 0.10);
+
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.42);
+  display: block;
+}
+
+
+.stats-img {
+  border-radius: 44.663px;
+}
+
+/* TOP RIGHT TWO SMALL IMAGES */
+.small-image-group {
+  display: flex;
+  gap: 28px;
+}
+
+.small-image-group img {
+  width: calc((100% - 28px) / 2);
+}
+
+/* GREEN CARDS */
+.stats-card {
+  height: 221.503px;
+
+  border-radius: 44.663px;
+  border: 1.918px solid rgba(244, 245, 247, 0.10);
+
+  background: #BFE804;
+
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.42);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-card h2 {
+  margin: 0;
+
+  color: #F4F5F7;
+
+  font-family: Poppins;
+  font-size: 89.023px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 0.95;
+
+  text-decoration-line: underline;
+}
+
+.stats-card p {
+  margin: 12px 0 0;
+
+  color: #F4F5F7;
+
+  font-family: Poppins;
+  font-size: 23.299px;
+  font-weight: 400;
+}
+/* SPORTS SECTION */
+.available-sports-section {
+  width: 1220px;
+  margin: 0 auto;
+  padding: 20px 0 70px;
+
+  overflow: visible;
+}
+
+.sports-slider-window {
+  width: 100%;
+  overflow: visible;
+}
+
+.sports-slider-track {
+  display: flex;
+  gap: 60px;
+  transition: transform 0.45s ease;
+}
+
+.available-sports-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
-.sports-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 66px;
-  font-weight: 700;
+.available-sports-header h2 {
   color: #002752;
+  font-family: Poppins;
+  font-size: 62px;
+  font-weight: 700;
+  margin: 0;
 }
 
 .sports-arrows {
   display: flex;
-  gap: 14px;
+  gap: 16px;
 }
 
-.arrow-btn {
-  width: 49px;
-  height: 49px;
-
-  border-radius: 50%;
+.sports-arrow {
+  width: 45px;
+  height: 45px;
   border: none;
-
-  background: rgba(0, 0, 0, 0.9);
-  color: #F4F5F7;
-
-  font-size: 34px;
-  line-height: 1;
+  border-radius: 50%;
+  background: #000;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   cursor: pointer;
-
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.25);
 }
 
-.arrow-btn svg {
-  width: 30px;
-  height: 30px;
+.sports-arrow img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
 }
 
-.sports-cards {
+.sports-slider-window {
+  width: 100%;
+  overflow: visible;
+}
+
+.sports-slider-track {
   display: flex;
-  gap: 40px;
+  gap: 60px;
+  transition: transform 0.45s ease;
 }
 
-.sport-card img {
-  width: 400px;
-  height: 430px;
-
-  object-fit: cover;
-
-  border-radius: 40px;
+.sport-card-img {
+  width: 340px;
+  flex: 0 0 340px;
+  display: block;
 }
 
 /* CATALOGUE SECTION */
@@ -264,6 +442,15 @@ body {
   object-fit: cover;
 
   border-radius: 40px;
+}
+
+.catalogue-card {
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.catalogue-card:hover {
+  transform: translateY(-6px);
 }
 
 /* FOOTER SECTION*/
@@ -378,191 +565,4 @@ body {
   bottom: 140px;
 
   width: 500px;
-}
-
-/* ===================== */
-/* PRODUCT LIST PAGE */
-/* ===================== */
-
-
-.product-list-page {
-  background-color: #F3F5F7;
-}
-
-.product-navbar {
-  position: relative;
-  top: 20px;
-  margin: 0 auto;
-  left: auto;
-  transform: none;
-}
-
-.product-main {
-  padding: 45px 50px 0px;
-  background: #F4F5F7;
-}
-
-.breadcrumb {
-  font-family: Poppins;
-  font-size: 17px;
-  color: #000;
-  text-decoration: underline;
-  margin: 0;
-  line-height: 1;
-}
-
-.all-products-title {
-  color: #121A3D;
-  font-family: Poppins;
-  font-size: 70px;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.category-bar {
-  width: 100%;
-  height: 74px;
-  background: #003E93;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 75px;
-}
-
-.category-bar button {
-  border: none;
-  border-radius: 18px;
-  background: #BFE804;
-
-  padding: 5px 24px;
-
-  color: #003E93;
-  font-family: Poppins;
-  font-size: 25.919px;
-  font-weight: 700;
-
-  box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-}
-
-.products-section {
-  background: #F4F5F7;
-  padding-bottom: 70px;
-}
-
-.products-topbar {
-  height: 74px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 45px;
-}
-
-.items-count {
-  font-family: Poppins;
-  font-size: 24px;
-  margin: 0;
-}
-
-.sort-by {
-  width: 150px;
-  height: 45px;
-
-  border: 1px solid #000;
-  border-radius: 10px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-
-  font-family: Poppins;
-  font-size: 20px;
-  color: #000;
-}
-
-.sort-arrow {
-  width: 22px;
-  height: 22px;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 338px);
-  justify-content: center;
-
-  column-gap: 18px;
-  row-gap: 34px;
-}
-
-.product-card {
-  text-decoration: none;
-  color: #000;
-}
-
-.product-card img {
-  width: 338px;
-  height: 560px;
-  object-fit: cover;
-  display: block;
-}
-
-.product-card h3 {
-  font-family: Poppins;
-  font-size: 26px;
-  font-weight: 400;
-  margin: 12px 0 0;
-}
-
-.product-card span {
-  font-family: Poppins;
-  font-size: 18px;
-  font-weight: 400;
-}
-
-/* PAGINATION BUTTONS */
-
-/* PAGINATION */
-
-.product-pagination {
-  display: flex;
-  justify-content: flex-end;
-
-  margin-top: 60px;
-  margin-bottom: 80px;
-
-  padding-right: 50px;
-}
-
-.page-btn {
-  width: 100px;
-  height: 52px;
-
-  border: none;
-
-  background: #BFE804;
-
-  color: rgba(255, 255, 255, 0.85);
-
-  font-family: 'Poppins', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-
-  cursor: pointer;
-}
-
-/* LEFT BUTTON */
-.page-btn.prev {
-  border-radius: 10px 0 0 10px;
-
-  border-right: 2px solid rgba(255,255,255,0.25);
-}
-
-/* RIGHT BUTTON */
-.page-btn.next {
-  border-radius: 0 10px 10px 0;
 }

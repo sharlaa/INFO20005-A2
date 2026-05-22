@@ -103,61 +103,94 @@
 
   </div>
 
-  <!-- MOVING STRIP -->
+  <!-- GREEN MOVING STRIP -->
   <div class="hero-strip">
-    <div class="strip-track">
-      SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON
-      SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON
-      SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON
+
+    <div class="hero-strip-track">
+
+      <p>
+        SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON
+      </p>
+
+      <p>
+        SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON SHOP ICON
+      </p>
+
     </div>
+
   </div>
 
 </section>
 
-<section class="sports-section">
+<section class="stats-section">
 
-  <div class="sports-header">
+  <div class="stats-box">
 
-  <h2 class="sports-title">Available Sports</h2>
+    <!-- TOP ROW -->
+    <div class="stats-top-row">
 
-  <div class="sports-arrows">
-    <button class="arrow-btn">
-      <svg viewBox="0 0 26 26">
-        <path d="M15.9 6.3L9.5 12.7L15.9 19.1"
-          stroke="#F4F5F7"
-          stroke-width="2.1"
-          stroke-linecap="round"
-          stroke-linejoin="round"/>
-      </svg>
-    </button>
+      <img src="assets/cardpic1.jpg" class="stats-img card-small" alt="Sports image">
 
-    <button class="arrow-btn">
-      <svg viewBox="0 0 26 26">
-        <path d="M9.5 6.3L15.9 12.7L9.5 19.1"
-          stroke="#F4F5F7"
-          stroke-width="2.1"
-          stroke-linecap="round"
-          stroke-linejoin="round"/>
-      </svg>
-    </button>
+      <div class="stats-card card-medium">
+        <h2>11000+</h2>
+        <p>ORDERS COMPLETED</p>
+      </div>
+
+      <div class="small-image-group card-large">
+        <img src="assets/cardpic3.jpg" class="stats-img" alt="Sports image">
+        <img src="assets/cardpic4.jpg" class="stats-img" alt="Sports image">
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ROW -->
+    <div class="stats-bottom-row">
+
+      <div class="stats-card card-small">
+        <h2>30+</h2>
+        <p>YEARS EXPERIENCE</p>
+      </div>
+
+      <img src="assets/cardpic2.jpg" class="stats-img card-medium" alt="Sports image">
+
+      <div class="stats-card card-large">
+        <h2>1800+</h2>
+        <p>SPORTS CLUB</p>
+      </div>
+
+    </div>
+
   </div>
 
+</section>
+
+<section class="available-sports-section">
+
+  <div class="available-sports-header">
+    <h2>Available Sports</h2>
+
+    <div class="sports-arrows">
+      <button id="sportsPrev" class="sports-arrow">
+        <img src="assets/arrow-left.svg" alt="Previous">
+      </button>
+
+      <button id="sportsNext" class="sports-arrow">
+        <img src="assets/arrow-right.svg" alt="Next">
+      </button>
+    </div>
   </div>
 
-  <div class="sports-cards">
+  <div class="sports-slider-window">
+    <div class="sports-slider-track" id="sportsTrack">
 
-    <div class="sport-card">
-      <img src="assets/tennis.png" alt="Tennis">
+      <img src="assets/tennis.png" class="sport-card-img" alt="Tennis">
+      <img src="assets/rugby.png" class="sport-card-img" alt="Rugby">
+      <img src="assets/cricket.png" class="sport-card-img" alt="Cricket">
+      <img src="assets/golf.png" class="sport-card-img" alt="Golf">
+      <img src="assets/netball.png" class="sport-card-img" alt="Netball">
+      <img src="assets/soccer.png" class="sport-card-img" alt="Soccer">
+
     </div>
-
-    <div class="sport-card">
-      <img src="assets/rugby.png" alt="Rugby">
-    </div>
-
-    <div class="sport-card">
-      <img src="assets/cricket.png" alt="Cricket">
-    </div>
-
   </div>
 
 </section>
@@ -168,17 +201,32 @@
 
   <div class="catalogue-cards">
 
-    <div class="catalogue-card">
+    <!-- SOCCER -->
+    <a 
+      href="https://iconsportsauredesign-static.myshopblocks.com/uploads/45978dbef8d4a3a29b9b5590f500cb5b/ICONSPORTSSOCCERCATALOGUE.pdf"
+      target="_blank"
+      class="catalogue-card"
+    >
       <img src="assets/soccer-teamwear.png" alt="Soccer Teamwear">
-    </div>
+    </a>
 
-    <div class="catalogue-card">
+    <!-- AFL -->
+    <a 
+      href="https://iconsportsauredesign-static.myshopblocks.com/uploads/429f9da803611c12b6f3edb1c2d0273a/AFLTEAMWEARCATALOGUE.pdf"
+      target="_blank"
+      class="catalogue-card"
+    >
       <img src="assets/afl-teamwear.png" alt="AFL Teamwear">
-    </div>
+    </a>
 
-    <div class="catalogue-card">
+    <!-- NETBALL -->
+    <a 
+      href="https://iconsportsauredesign-static.myshopblocks.com/uploads/d810b29958efb97ae1ff22b8df98b2cd/NETBALLTEAMWEARCATALOGUE.pdf"
+      target="_blank"
+      class="catalogue-card"
+    >
       <img src="assets/netball-teamwear.png" alt="Netball Teamwear">
-    </div>
+    </a>
 
   </div>
 
@@ -211,6 +259,8 @@
   <img src="assets/icon-logo.png" alt="ICON logo" class="footer-logo">
 
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
