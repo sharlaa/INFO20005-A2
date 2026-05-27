@@ -31,9 +31,9 @@
     <!-- RIGHT ICONS -->
     <div class="nav-actions">
 
-      <a href="#">
-        <img src="assets/shopping cart.svg" alt="Cart">
-      </a>
+    <a href="cart-page.html">
+      <img src="assets/shopping cart.svg" alt="Cart">
+    </a>
       <a href="#">
         <img src="assets/profile.svg" alt="Profile">
       </a>
@@ -117,49 +117,67 @@
             <button>XXL</button>
         </div>
 
-        <button class="add-cart-btn">ADD TO CART</button>
-        <button class="checkout-btn">CHECKOUT NOW</button>
-        <div class="product-accordion">
+        <button class="add-cart-btn" id="addCartBtn">
+          ADD TO CART
+        </button>
+        <a href="checkout.html" class="checkout-btn">
+          CHECKOUT NOW
+        </a>
+<div class="product-accordion">
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                DESCRIPTION
-                <span>+</span>
-                </button>
-                <div class="accordion-content">
-                <p>Premium golf shirt designed for comfort, movement, and everyday teamwear styling.</p>
-                </div>
-            </div>
+  <div class="accordion-item">
+    <button class="accordion-header">
+      DESCRIPTION
+      <span>+</span>
+    </button>
+    <div class="accordion-content">
+      <p>A classic golf shirt designed for everyday comfort, breathable movement, and effortless styling. Made with a soft lightweight fabric, perfect for both casual wear and teamwear.</p>
+    </div>
+  </div>
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                SIZE GUIDE
-                <span>+</span>
-                </button>
-                <div class="accordion-content">
-                <p>Available in S, M, L, XL, and XXL.</p>
-                </div>
-            </div>
+  <div class="accordion-item">
+    <button class="accordion-header">
+      SIZE GUIDE
+      <span>+</span>
+    </button>
+    <div class="accordion-content">
+      <p>Length of size S, bust to hem: 70 cm / 27.5 in.</p>
+      <p>Model is wearing size S.</p>
+      <p>Model’s details:</p>
+      <p>Dress size: AU 6</p>
+      <p>Height: 162 cm</p>
+      <p>Bust: 78.5 cm</p>
+      <p>Waist: 60 cm</p>
+      <p>Hips: 91 cm</p>
+    </div>
+  </div>
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                SHIPPING INFORMATION
-                <span>+</span>
-                </button>
-                <div class="accordion-content">
-                <p>Standard shipping applies. Delivery time may vary by location.</p>
-                </div>
-            </div>
+  <div class="accordion-item">
+    <button class="accordion-header">
+      SHIPPING INFORMATION
+      <span>+</span>
+    </button>
+    <div class="accordion-content">
+      <p>Standard shipping usually takes 3–7 business days depending on your location.</p>
+      <p>Express shipping is available at checkout for faster delivery.</p>
+      <p>Orders are processed within 1–2 business days.</p>
+    </div>
+  </div>
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                FAQ
-                <span>+</span>
-                </button>
-                <div class="accordion-content">
-                <p>Contact our team for custom sizing, bulk orders, or club enquiries.</p>
-                </div>
-            </div>
+  <div class="accordion-item">
+    <button class="accordion-header">
+      RETURNS
+      <span>+</span>
+    </button>
+    <div class="accordion-content">
+      <p>Items can be returned within 14 days of delivery as long as they are unworn, unwashed, and in their original condition.</p>
+      <p>Return shipping costs are the customer’s responsibility unless the item is faulty.</p>
+      <p>Once received and approved, refunds will be processed back to the original payment method.</p>
+    </div>
+  </div>
+
+</div>
+       
             </div>
         </div>
     </div>
@@ -202,40 +220,156 @@
 <!-- NOTES: Change the picture for other products -->
 </section>
 
-<div class="cart-popup">
+<div class="cart-overlay" id="cartOverlay"></div>
 
-  <h2>CART</h2>
+<div class="cart-popup" id="cartPopup">
 
-  <div class="cart-items">
+  <button class="close-cart" id="closeCartBtn">×</button>
 
-    <div class="cart-item">
-      <img src="assets/golf-shirt1.jpg" alt="Golf shirt">
+  <h2>Your Cart</h2>
 
-      <div class="cart-item-info">
-        <h3>GOLF SHIRT</h3>
-        <p>SIZE: M<br>QTY: 2</p>
+  <div class="cart-item">
+    <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
 
-        <div class="cart-item-bottom">
-          <a href="#">Edit</a>
-          <span>AUD $35</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="cart-summary">
-    <div class="subtotal-row">
-      <span>Bag Subtotal</span>
-      <span>AUD $70</span>
-    </div>
-
-    <div class="cart-buttons">
-      <a href="cart.html" class="view-cart-btn">VIEW CART</a>
-      <a href="checkout.html" class="cart-checkout-btn">CHECKOUT NOW</a>
+    <div class="cart-item-info">
+      <h3>Golf Shirt</h3>
+      <p>AUD $35</p>
+      <p>Size: M</p>
+      <p>Qty: 1</p>
     </div>
   </div>
+
+  <div class="cart-total">
+    <span>Subtotal</span>
+    <span>AUD $35</span>
+  </div>
+
+<div class="cart-buttons">
+
+  <a href="checkout.html" class="cart-checkout-btn">
+    CHECKOUT NOW
+  </a>
 
 </div>
+
+</div>
+
+<script>
+  const addCartBtn = document.getElementById("addCartBtn");
+  const cartPopup = document.getElementById("cartPopup");
+  const cartOverlay = document.getElementById("cartOverlay");
+  const closeCartBtn = document.getElementById("closeCartBtn");
+
+  addCartBtn.addEventListener("click", () => {
+    cartPopup.classList.add("active");
+    cartOverlay.classList.add("active");
+  });
+
+  closeCartBtn.addEventListener("click", () => {
+    cartPopup.classList.remove("active");
+    cartOverlay.classList.remove("active");
+  });
+
+  cartOverlay.addEventListener("click", () => {
+    cartPopup.classList.remove("active");
+    cartOverlay.classList.remove("active");
+  });
+
+
+  /* PRODUCT IMAGE GALLERY */
+  const galleryImages = [
+    "assets/golf-shirt1.jpg",
+    "assets/golf-shirt2.jpg",
+    "assets/golf-shirt3.jpg",
+    "assets/golf-shirt4.jpg"
+  ];
+
+  let currentIndex = 0;
+
+  const bigProductImages = document.querySelectorAll(".big-product-image");
+  const thumbnails = document.querySelectorAll(".thumbnail");
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
+  const bigImageRow = document.querySelector(".big-image-row");
+
+
+  function updateGallery(direction = "left") {
+
+    const firstImageIndex = currentIndex;
+    const secondImageIndex = (currentIndex + 1) % galleryImages.length;
+
+    bigProductImages[0].src = galleryImages[firstImageIndex];
+    bigProductImages[1].src = galleryImages[secondImageIndex];
+
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.classList.toggle(
+        "active-thumb",
+        index === currentIndex
+      );
+    });
+
+    bigImageRow.classList.remove("slide-left", "slide-right");
+
+    void bigImageRow.offsetWidth;
+
+    bigImageRow.classList.add(
+      direction === "left" ? "slide-left" : "slide-right"
+    );
+  }
+
+
+  rightArrow.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    updateGallery("left");
+  });
+
+  leftArrow.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateGallery("right");
+  });
+
+  thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener("click", () => {
+      currentIndex = index;
+      updateGallery("left");
+    });
+  });
+
+/* SIZE SELECTOR */
+const sizeButtons = document.querySelectorAll(".size-options button");
+
+sizeButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    sizeButtons.forEach(btn => {
+      btn.classList.remove("active-size");
+    });
+
+    button.classList.add("active-size");
+
+  });
+
+});
+
+/* ACCORDION */
+const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+accordionHeaders.forEach(header => {
+  header.addEventListener("click", () => {
+    const content = header.nextElementSibling;
+    const icon = header.querySelector("span");
+
+    content.classList.toggle("active");
+
+    if (content.classList.contains("active")) {
+      icon.textContent = "−";
+    } else {
+      icon.textContent = "+";
+    }
+  });
+});
+
+</script>
 </body>
 </html>
