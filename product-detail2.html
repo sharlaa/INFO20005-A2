@@ -31,9 +31,9 @@
     <!-- RIGHT ICONS -->
     <div class="nav-actions">
 
-      <a href="#">
-        <img src="assets/shopping cart.svg" alt="Cart">
-      </a>
+    <a href="cart-page.html">
+      <img src="assets/shopping cart.svg" alt="Cart">
+    </a>
       <a href="#">
         <img src="assets/profile.svg" alt="Profile">
       </a>
@@ -73,82 +73,129 @@
 
     <!-- LEFT THUMBNAILS -->
     <div class="thumbnail-column">
-      <img src="assets/tennis-shorts1.jpg" class="thumbnail" alt="Tennis Shorts view 1">
+      <img src="assets/tennis-shorts1.jpg" class="thumbnail active-thumb" alt="Tennis Shorts view 1">
       <img src="assets/tennis-shorts2.jpg" class="thumbnail" alt="Tennis Shorts view 2">
       <img src="assets/tennis-shorts3.jpg" class="thumbnail" alt="Tennis Shorts view 3">
       <img src="assets/tennis-shorts4.jpg" class="thumbnail" alt="Tennis Shorts view 4">
     </div>
 
-    <!-- MIDDLE THUMBNAILS -->
-    <div class="main-gallery">
-      <button class="gallery-arrow left-arrow">&lt;</button>
+  <!-- MIDDLE THUMBNAILS -->
+  <div class="main-gallery">
 
-      <div class="big-image-row">
-        <img src="assets/tennis-shorts1.jpg" class="big-product-image" alt="Tennis Shorts large view 1">
-        <img src="assets/tennis-shorts2.jpg" class="big-product-image" alt="Tennis Shorts large view 2">
-      </div>
+    <button class="gallery-arrow left-arrow">
+      <img src="assets/arrow-left.svg" alt="Previous image">
+    </button>
 
-      <button class="gallery-arrow right-arrow">&gt;</button>
+    <div class="big-image-row">
+      <img src="assets/tennis-shorts1.jpg"
+          class="big-product-image"
+          alt="Tennis Shorts large view 1">
+
+      <img src="assets/tennis-shorts2.jpg"
+          class="big-product-image"
+          alt="Tennis Shorts large view 2">
     </div>
+
+    <button class="gallery-arrow right-arrow">
+      <img src="assets/arrow-right.svg" alt="Next image">
+    </button>
+
+  </div>
 
     <!-- RIGHT INFORMATION -->
     <div class="product-info">
         <h1>TENNIS SHORTS</h1>
-        <p class="price">AUD $35</p>
+        <p class="price">AUD $28</p>
 
         <p class="size-label">SIZE</p>
 
         <div class="size-options">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
-            <button>XXL</button>
+          <button data-size="S">S</button>
+          <button data-size="M">M</button>
+          <button data-size="L">L</button>
+          <button data-size="XL">XL</button>
+          <button data-size="XXL">XXL</button>
         </div>
 
-        <button class="add-cart-btn">ADD TO CART</button>
-        <button class="checkout-btn">CHECKOUT NOW</button>
-        <div class="product-accordion">
+        <p class="qty-label">QTY</p>
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                DESCRIPTION
-                <span>+</span>
-                </button>
-                <div class="accordion-content">
-                <p>Premium golf shirt designed for comfort, movement, and everyday teamwear styling.</p>
-                </div>
-            </div>
+        <div class="quantity-selector">
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                SIZE GUIDE
-                <span>+</span>
-                </button>
-                <div class="accordion-content">
-                <p>Available in S, M, L, XL, and XXL.</p>
-                </div>
-            </div>
+          <button id="minusQty" class="qty-btn">
+            −
+          </button>
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                SHIPPING INFORMATION
-                <span>+</span>
-                </button>
-                <div class="accordion-content">
-                <p>Standard shipping applies. Delivery time may vary by location.</p>
-                </div>
-            </div>
+          <div class="qty-display">
+            <span id="qtyValue">1</span>
+          </div>
 
-            <div class="accordion-item">
-                <button class="accordion-header">
-                FAQ
-                <span>+</span>
-                </button>
-                <div class="accordion-content">
-                <p>Contact our team for custom sizing, bulk orders, or club enquiries.</p>
-                </div>
-            </div>
+          <button id="plusQty" class="qty-btn">
+            +
+          </button>
+
+        </div>
+
+        <button class="add-cart-btn" id="addCartBtn">
+          ADD TO CART
+        </button>
+        <a href="#" class="checkout-btn" id="checkoutNowBtn">
+          CHECKOUT NOW
+        </a>
+<div class="product-accordion">
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      DESCRIPTION
+      <span>+</span>
+    </button>
+    <div class="accordion-content">
+      <p>A classic tennis shorts designed for everyday comfort, breathable movement, and effortless styling. Made with a soft lightweight fabric, perfect for both casual wear and teamwear.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      SIZE GUIDE
+      <span>+</span>
+    </button>
+    <div class="accordion-content">
+      <p>Length of size S, bust to hem: 70 cm / 27.5 in.</p>
+      <p>Model is wearing size S.</p>
+      <p>Model’s details:</p>
+      <p>Dress size: AU 6</p>
+      <p>Height: 162 cm</p>
+      <p>Bust: 78.5 cm</p>
+      <p>Waist: 60 cm</p>
+      <p>Hips: 91 cm</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      SHIPPING INFORMATION
+      <span>+</span>
+    </button>
+    <div class="accordion-content">
+      <p>Standard shipping usually takes 3–7 business days depending on your location.</p>
+      <p>Express shipping is available at checkout for faster delivery.</p>
+      <p>Orders are processed within 1–2 business days.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      RETURNS
+      <span>+</span>
+    </button>
+    <div class="accordion-content">
+      <p>Items can be returned within 14 days of delivery as long as they are unworn, unwashed, and in their original condition.</p>
+      <p>Return shipping costs are the customer’s responsibility unless the item is faulty.</p>
+      <p>Once received and approved, refunds will be processed back to the original payment method.</p>
+    </div>
+  </div>
+
+</div>
+       
             </div>
         </div>
     </div>
@@ -191,40 +238,359 @@
 <!-- NOTES: Change the picture for other products -->
 </section>
 
-<div class="cart-popup">
+<div class="cart-overlay" id="cartOverlay"></div>
 
-  <h2>CART</h2>
+<div class="cart-popup" id="cartPopup">
+
+  <button class="close-cart" id="closeCartBtn">&times;</button>
+
+  <h2>Your Cart</h2>
 
   <div class="cart-items">
-
-    <div class="cart-item">
-      <img src="assets/golf-shirt1.jpg" alt="Golf shirt">
-
-      <div class="cart-item-info">
-        <h3>GOLF SHIRT</h3>
-        <p>SIZE: M<br>QTY: 2</p>
-
-        <div class="cart-item-bottom">
-          <a href="#">Edit</a>
-          <span>AUD $35</span>
-        </div>
-      </div>
-    </div>
-
+    <!-- JS inserts products here -->
   </div>
 
-  <div class="cart-summary">
+  <div class="cart-footer">
+
     <div class="subtotal-row">
-      <span>Bag Subtotal</span>
-      <span>AUD $70</span>
+      <span>Subtotal</span>
+      <span>AUD $0</span>
     </div>
 
-    <div class="cart-buttons">
-      <a href="cart.html" class="view-cart-btn">VIEW CART</a>
-      <a href="checkout.html" class="cart-checkout-btn">CHECKOUT NOW</a>
-    </div>
+    <a href="checkout.html" class="cart-checkout-btn">
+      CHECKOUT NOW
+    </a>
+
   </div>
 
 </div>
+
+<footer class="footer">
+
+  <div class="store-info">
+    <h3>STORE INFORMATION</h3>
+    <p>
+      ICON HQ<br>
+      850 Cooper street<br>
+      Somerton 3062<br>
+      Victoria<br>
+      Australia<br>
+      yash@icon-sports.com.au<br>
+      ABN- 25 615 676 045
+    </p>
+  </div>
+
+  <div class="newsletter">
+    <h3>Subscribe to our newsletter</h3>
+
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <img src="assets/icon-logo.png" alt="ICON logo" class="footer-logo">
+
+</footer>
+
+<script>
+  const addCartBtn = document.getElementById("addCartBtn");
+  const cartPopup = document.getElementById("cartPopup");
+  const cartOverlay = document.getElementById("cartOverlay");
+  const closeCartBtn = document.getElementById("closeCartBtn");
+
+  let selectedSize = null;
+  let quantity = 1;
+
+  /* SIZE SELECTOR */
+  const sizeButtons = document.querySelectorAll(".size-options button");
+
+  sizeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      sizeButtons.forEach(btn => btn.classList.remove("active-size"));
+      button.classList.add("active-size");
+      selectedSize = button.dataset.size;
+    });
+  });
+
+  /* QUANTITY SELECTOR */
+  const minusQty = document.getElementById("minusQty");
+  const plusQty = document.getElementById("plusQty");
+  const qtyValue = document.getElementById("qtyValue");
+
+  qtyValue.textContent = quantity;
+
+  plusQty.addEventListener("click", () => {
+    quantity++;
+    qtyValue.textContent = quantity;
+  });
+
+  minusQty.addEventListener("click", () => {
+    if (quantity > 1) {
+      quantity--;
+      qtyValue.textContent = quantity;
+    }
+  });
+
+  /* CART POPUP RENDER */
+  function renderCartPopup() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const cartItems = document.querySelector(".cart-items");
+    const subtotalRow = document.querySelector(".subtotal-row");
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = "<p>Your cart is empty.</p>";
+      subtotalRow.innerHTML = "<span>Subtotal</span><span>AUD $0</span>";
+      return;
+    }
+
+    const subtotal = cart.reduce((sum, product) => {
+      return sum + product.price * product.quantity;
+    }, 0);
+
+    cartItems.innerHTML = cart.map((item, index) => `
+      <div class="cart-popup-item">
+        <img src="${item.image}" alt="${item.name}">
+
+        <div class="cart-item-info">
+          <h3>${item.name}</h3>
+
+          <button class="remove-item" data-index="${index}">
+            Remove
+          </button>
+
+          <div class="cart-mini-options">
+            <button class="mini-select" data-type="size" data-index="${index}">
+              <span>Size: ${item.size}</span>
+              <span class="mini-arrow">⌄</span>
+            </button>
+
+            <button class="mini-select" data-type="qty" data-index="${index}">
+              <span>Qty: ${item.quantity}</span>
+              <span class="mini-arrow">⌄</span>
+            </button>
+          </div>
+
+          <p>AUD $${item.price} × ${item.quantity}</p>
+        </div>
+      </div>
+    `).join("");
+
+    subtotalRow.innerHTML = `
+      <span>Subtotal</span>
+      <span>AUD $${subtotal}</span>
+    `;
+
+    const removeButtons = document.querySelectorAll(".remove-item");
+
+    removeButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const index = button.dataset.index;
+
+        cart.splice(index, 1);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        renderCartPopup();
+      });
+    });
+
+    const miniSelects = document.querySelectorAll(".mini-select");
+
+    miniSelects.forEach(button => {
+      button.addEventListener("click", () => {
+        const index = button.dataset.index;
+        const type = button.dataset.type;
+
+        if (type === "size") {
+          const newSize = prompt("Choose size: S, M, L, XL, XXL", cart[index].size);
+
+          if (newSize) {
+            const cleanSize = newSize.toUpperCase();
+
+            if (["S", "M", "L", "XL", "XXL"].includes(cleanSize)) {
+              cart[index].size = cleanSize;
+            } else {
+              alert("Please enter a valid size: S, M, L, XL, or XXL.");
+              return;
+            }
+          }
+        }
+
+        if (type === "qty") {
+          const newQty = prompt("Enter quantity", cart[index].quantity);
+
+          if (newQty) {
+            const cleanQty = parseInt(newQty);
+
+            if (cleanQty > 0) {
+              cart[index].quantity = cleanQty;
+            } else {
+              alert("Quantity must be at least 1.");
+              return;
+            }
+          }
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCartPopup();
+      });
+    });
+  }
+
+  /* ADD TO CART */
+  addCartBtn.addEventListener("click", () => {
+    if (!selectedSize) {
+      alert("Please choose a size first.");
+      return;
+    }
+
+    const product = {
+      id: "tennis-shorts",
+      name: "Tennis Shorts",
+      price: 28,
+      size: selectedSize,
+      image: "assets/tennis-shorts1.jpg",
+      quantity: quantity
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingProduct = cart.find(item =>
+      item.id === product.id && item.size === product.size
+    );
+
+    if (existingProduct) {
+      existingProduct.quantity += quantity;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    renderCartPopup();
+
+    cartPopup.classList.add("active");
+    cartOverlay.classList.add("active");
+  });
+
+  closeCartBtn.addEventListener("click", () => {
+    cartPopup.classList.remove("active");
+    cartOverlay.classList.remove("active");
+  });
+
+  cartOverlay.addEventListener("click", () => {
+    cartPopup.classList.remove("active");
+    cartOverlay.classList.remove("active");
+  });
+
+  /* PRODUCT IMAGE GALLERY */
+  const galleryImages = [
+    "assets/tennis-shorts1.jpg",
+    "assets/tennis-shorts2.jpg",
+    "assets/tennis-shorts3.jpg",
+    "assets/tennis-shorts4.jpg"
+  ];
+
+  let currentIndex = 0;
+
+  const bigProductImages = document.querySelectorAll(".big-product-image");
+  const thumbnails = document.querySelectorAll(".thumbnail");
+  const leftArrow = document.querySelector(".left-arrow");
+  const rightArrow = document.querySelector(".right-arrow");
+  const bigImageRow = document.querySelector(".big-image-row");
+
+  function updateGallery() {
+    bigImageRow.classList.add("fade-out");
+
+    setTimeout(() => {
+      const firstImageIndex = currentIndex;
+      const secondImageIndex = (currentIndex + 1) % galleryImages.length;
+
+      bigProductImages[0].src = galleryImages[firstImageIndex];
+      bigProductImages[1].src = galleryImages[secondImageIndex];
+
+      thumbnails.forEach((thumbnail, index) => {
+        thumbnail.classList.toggle("active-thumb", index === currentIndex);
+      });
+
+      bigImageRow.classList.remove("fade-out");
+    }, 150);
+  }
+
+  rightArrow.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % galleryImages.length;
+    updateGallery();
+  });
+
+  leftArrow.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    updateGallery();
+  });
+
+  thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener("click", () => {
+      currentIndex = index;
+      updateGallery();
+    });
+  });
+
+  /* ACCORDION */
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+  accordionHeaders.forEach(header => {
+    header.addEventListener("click", () => {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector("span");
+
+      content.classList.toggle("active");
+
+      if (content.classList.contains("active")) {
+        icon.textContent = "−";
+      } else {
+        icon.textContent = "+";
+      }
+    });
+  });
+
+const checkoutNowBtn = document.getElementById("checkoutNowBtn");
+
+checkoutNowBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  if (!selectedSize) {
+    alert("Please choose a size first.");
+    return;
+  }
+
+  const product = {
+    id: "tennis-shorts",
+    name: "Tennis Shorts",
+    price: 28,
+    size: selectedSize,
+    image: "assets/tennis-shorts1.jpg",
+    quantity: quantity
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existingProduct = cart.find(item =>
+    item.id === product.id && item.size === product.size
+  );
+
+  if (existingProduct) {
+    existingProduct.quantity += quantity;
+  } else {
+    cart.push(product);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  window.location.href = "checkout.html";
+});
+
+</script>
+
 </body>
 </html>

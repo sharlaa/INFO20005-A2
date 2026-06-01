@@ -67,8 +67,7 @@
 
       <div class="form-grid">
         <input class="full" type="text" placeholder="Address">
-        <input class="full" type="text" placeholder="Apartment, suite, etc. (optional)">
-
+        <input class="full optional" type="text" placeholder="Apartment, suite, etc. (optional)">
         <input type="text" placeholder="Suburb">
 
         <select>
@@ -224,32 +223,36 @@
     });
   });
 
-  function validateCheckoutForm() {
-    const requiredFields = document.querySelectorAll(
-      '.checkout-left input[type="text"], .checkout-left input[type="email"], .checkout-left input[type="tel"], .checkout-left select'
-    );
+    function validateCheckoutForm() {
+      const requiredFields = document.querySelectorAll(
+        '.checkout-left input:not([type="checkbox"]):not(.optional), .checkout-left select'
+      );
 
-    for (const field of requiredFields) {
-      if (!field.value.trim()) {
-        alert("Please fill out all required information before placing your order.");
-        field.focus();
-        return false;
-      }
+      for (const field of requiredFields) {
+        if (field.closest(".card-fields")) {
+          continue;
+        }
+
+    if (!field.value.trim()) {
+      alert("Please fill out all required information before placing your order.");
+      field.focus();
+      return false;
     }
+  }
 
     const bankCardSelected = paymentRadios[0].checked;
 
-    if (bankCardSelected) {
-      const cardInputs = cardFields.querySelectorAll("input");
+      if (bankCardSelected) {
+        const cardInputs = cardFields.querySelectorAll("input");
 
-      for (const input of cardInputs) {
-        if (!input.value.trim()) {
-          alert("Please fill out your card details before placing your order.");
-          input.focus();
-          return false;
+        for (const input of cardInputs) {
+          if (!input.value.trim()) {
+            alert("Please fill out your card details before placing your order.");
+            input.focus();
+            return false;
+          }
         }
       }
-    }
 
     return true;
   }

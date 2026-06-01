@@ -138,7 +138,7 @@
         <button class="add-cart-btn" id="addCartBtn">
           ADD TO CART
         </button>
-        <a href="checkout.html" class="checkout-btn">
+        <a href="#" class="checkout-btn" id="checkoutNowBtn">
           CHECKOUT NOW
         </a>
 <div class="product-accordion">
@@ -553,6 +553,42 @@
       }
     });
   });
+
+const checkoutNowBtn = document.getElementById("checkoutNowBtn");
+
+checkoutNowBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  if (!selectedSize) {
+    alert("Please choose a size first.");
+    return;
+  }
+
+  const product = {
+    id: "tennis-shorts",
+    name: "Tennis Shorts",
+    price: 28,
+    size: selectedSize,
+    image: "assets/tennis-shorts1.jpg",
+    quantity: quantity
+  };
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  const existingProduct = cart.find(item =>
+    item.id === product.id && item.size === product.size
+  );
+
+  if (existingProduct) {
+    existingProduct.quantity += quantity;
+  } else {
+    cart.push(product);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  window.location.href = "checkout.html";
+});
 </script>
 
 </body>

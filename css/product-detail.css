@@ -40,6 +40,8 @@ body {
 .thumbnail-column {
   display: flex;
   flex-direction: column;
+  gap: 4px;
+
 }
 
 .active-thumb {
@@ -631,7 +633,7 @@ body {
 
 .thumbnail {
   width: 104px;
-  height: 160px;
+  height: 171px;
   object-fit: cover;
   border: 2px solid transparent;
   cursor: pointer;
