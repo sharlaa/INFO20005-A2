@@ -336,17 +336,22 @@ body {
   font-weight: 400;
 }
 /* SPORTS SECTION */
+body {
+  overflow-x: hidden;
+}
+
 .available-sports-section {
   width: 1220px;
   margin: 0 auto;
   padding: 20px 0 70px;
-
   overflow: visible;
+  margin-bottom: 60px;
 }
 
 .sports-slider-window {
-  width: 100%;
-  overflow: visible;
+  width: 100vw;
+  margin-left: calc((1220px - 100vw) / 2);
+  overflow: hidden;
 }
 
 .sports-slider-track {
@@ -394,17 +399,6 @@ body {
   width: 16px;
   height: 16px;
   filter: brightness(0) invert(1);
-}
-
-.sports-slider-window {
-  width: 100%;
-  overflow: visible;
-}
-
-.sports-slider-track {
-  display: flex;
-  gap: 60px;
-  transition: transform 0.45s ease;
 }
 
 .sport-card-img {

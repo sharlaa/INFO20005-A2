@@ -264,3 +264,109 @@ select {
   font-size: 28px;
   font-weight: 700;
 }
+
+.discount-box input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #F4F5F7;
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+}
+
+.discount-box input::placeholder {
+  color: #F4F5F7;
+}
+
+.discount-box button {
+  border: none;
+  background: transparent;
+  color: #F4F5F7;
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.place-order-btn {
+  width: 100%;
+  height: 55px;
+
+  border: none;
+  border-radius: 30px;
+
+  background: #BFE804;
+  color: #000;
+
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+
+  margin-top: 25px;
+}
+
+/* HOVER */
+.place-order-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.28);
+
+  filter: brightness(1.03);
+}
+
+/* CLICK */
+.place-order-btn:active {
+  transform: translateY(0);
+
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card-fields.hidden {
+  display: none;
+}
+
+.order-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.order-popup.active {
+  display: flex;
+}
+
+.order-popup-box {
+  background: #F4F5F7;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+}
+
+.order-popup-box h2 {
+  color: #003E93;
+}
+
+.order-popup-box a {
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 12px 28px;
+  border-radius: 12px;
+  background: #003E93;
+  color: #F4F5F7;
+  text-decoration: none;
+}

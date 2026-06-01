@@ -122,46 +122,18 @@
 
     <div class="summary-card">
 
-      <div class="summary-product">
-        <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
+      <div id="checkoutProducts"></div>
 
-        <div class="summary-info">
-          <div class="product-top">
-            <h3>GOLF SHIRT</h3>
-            <span class="remove-btn">×</span>
-          </div>
-
-          <p class="product-color">GREEN / WHITE</p>
-          <p class="product-price">$35</p>
-
-          <div class="product-detail-row">
-            <div class="dropdown-detail">
-              <span>Size M</span>
-              <span>⌄</span>
-            </div>
-
-            <div class="dropdown-detail">
-              <span>Qty 2</span>
-              <span>⌄</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="discount-box">
-        <span>Add a discount code</span>
-
-        <div class="discount-right">
-          <span>Apply</span>
-          <span>×</span>
-        </div>
-      </div>
+      <form class="discount-box">
+        <input type="text" placeholder="Add a discount code">
+        <button type="submit">Apply</button>
+      </form>
 
       <div class="summary-total-box">
 
         <div class="summary-line">
           <span>Items:</span>
-          <span>$70</span>
+          <span class="items-price">$0</span>
         </div>
 
         <div class="summary-line">
@@ -171,16 +143,149 @@
 
         <div class="summary-final">
           <span>Total to pay</span>
-          <span>$70</span>
+          <span class="total-price">$0</span>
         </div>
 
       </div>
+
+      <button class="place-order-btn" type="button" id="placeOrderBtn">
+        PLACE ORDER
+      </button>
 
     </div>
 
   </aside>
 
 </main>
+
+<div class="order-popup" id="orderPopup">
+  <div class="order-popup-box">
+    <h2>Order Placed!</h2>
+    <p>Thank you. Your order has been successfully submitted.</p>
+    <a href="index.html">Back to Home</a>
+  </div>
+</div>
+
+<script>
+  function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+  }
+
+  function getSubtotal(cart) {
+    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  }
+
+  function renderCheckoutSummary() {
+    const cart = getCart();
+    const checkoutProducts = document.getElementById("checkoutProducts");
+
+    if (cart.length === 0) {
+      checkoutProducts.innerHTML = "<p>Your cart is empty.</p>";
+      document.querySelector(".items-price").textContent = "$0";
+      document.querySelector(".total-price").textContent = "$0";
+      return;
+    }
+
+    checkoutProducts.innerHTML = cart.map(item => `
+      <div class="summary-product">
+        <img src="${item.image}" alt="${item.name}">
+
+        <div class="summary-info">
+          <div class="product-top">
+            <h3>${item.name.toUpperCase()}</h3>
+          </div>
+
+          <p class="product-price">AUD $${item.price} × ${item.quantity}</p>
+
+          <div class="product-detail-row">
+            <span>Size: ${item.size}</span>
+            <span>Qty: ${item.quantity}</span>
+          </div>
+        </div>
+      </div>
+    `).join("");
+
+    const subtotal = getSubtotal(cart);
+
+    document.querySelector(".items-price").textContent = `$${subtotal}`;
+    document.querySelector(".total-price").textContent = `$${subtotal}`;
+  }
+
+  const paymentRadios = document.querySelectorAll('input[name="payment"]');
+  const cardFields = document.querySelector(".card-fields");
+
+  paymentRadios.forEach((radio, index) => {
+    radio.addEventListener("change", () => {
+      if (index === 1 && radio.checked) {
+        cardFields.classList.add("hidden");
+      } else {
+        cardFields.classList.remove("hidden");
+      }
+    });
+  });
+
+  function validateCheckoutForm() {
+    const requiredFields = document.querySelectorAll(
+      '.checkout-left input[type="text"], .checkout-left input[type="email"], .checkout-left input[type="tel"], .checkout-left select'
+    );
+
+    for (const field of requiredFields) {
+      if (!field.value.trim()) {
+        alert("Please fill out all required information before placing your order.");
+        field.focus();
+        return false;
+      }
+    }
+
+    const bankCardSelected = paymentRadios[0].checked;
+
+    if (bankCardSelected) {
+      const cardInputs = cardFields.querySelectorAll("input");
+
+      for (const input of cardInputs) {
+        if (!input.value.trim()) {
+          alert("Please fill out your card details before placing your order.");
+          input.focus();
+          return false;
+        }
+      }
+    }
+
+    return true;
+  }
+
+  const placeOrderBtn = document.getElementById("placeOrderBtn");
+  const orderPopup = document.getElementById("orderPopup");
+
+  placeOrderBtn.addEventListener("click", () => {
+    const cart = getCart();
+
+    if (cart.length === 0) {
+      alert("Your cart is empty.");
+      return;
+    }
+
+    if (!validateCheckoutForm()) {
+      return;
+    }
+
+    orderPopup.classList.add("active");
+    localStorage.removeItem("cart");
+  });
+
+  renderCheckoutSummary();
+
+  const discountForm = document.querySelector(".discount-box, .voucher-form");
+
+  if (discountForm) {
+    discountForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      alert("Invalid discount code.");
+    });
+  }
+
+</script>
 
 </body>
 </html>

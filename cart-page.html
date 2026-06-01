@@ -54,83 +54,7 @@
 
   <section class="cart-left">
 
-    <h1>Cart</h1>
-    <div class="cart-product">
-    <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
-
-    <div class="cart-product-info">
-        <h2>GOLF SHIRT</h2>
-        <a href="#">Remove</a>
-    </div>
-
-    <div class="cart-product-size">
-        <label>SIZE:</label>
-        <select>
-        <option>M</option>
-        <option>S</option>
-        <option>L</option>
-        <option>XL</option>
-        <option>XXL</option>
-        </select>
-    </div>
-
-    <div class="cart-product-qty">
-        <label>QTY:</label>
-        <select>
-        <option>2</option>
-        <option>1</option>
-        <option>3</option>
-        <option>4</option>
-        </select>
-    </div>
-
-    <p class="cart-product-price">$35</p>
-    </div>
-    <div class="cart-product">
-    <img src="assets/golf-shirt2.jpg" alt="Golf Shirt">
-
-    <div class="cart-product-info">
-        <h2>GOLF SHIRT</h2>
-        <a href="#">Remove</a>
-    </div>
-
-    <div class="cart-product-size">
-        <label>SIZE:</label>
-        <select>
-        <option>M</option>
-        <option>S</option>
-        <option>L</option>
-        <option>XL</option>
-        <option>XXL</option>
-        </select>
-    </div>
-
-    <div class="cart-product-qty">
-        <label>QTY:</label>
-        <select>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        </select>
-    </div>
-
-    <p class="cart-product-price">$35</p>
-    </div>
-
-    <div class="cart-subtotal-row">
-      <span>Subtotal</span>
-      <span>$70</span>
-    </div>
-
-    <div class="voucher-section">
-      <h2>Voucher Code</h2>
-
-      <form>
-        <input type="text" placeholder="Enter Voucher Code">
-        <button type="submit">Apply</button>
-      </form>
-    </div>
+    <div id="cartProducts"></div>
 
   </section>
 
@@ -152,11 +76,149 @@
       <span>AUD $70</span>
     </div>
 
-    <button class="order-btn">MAKE AN ORDER</button>
+    <a href="checkout.html" class="order-btn">
+      MAKE AN ORDER
+    </a>
+
 
   </aside>
 
+
 </main>
+
+<script>
+  function renderCartPage() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartProducts = document.getElementById("cartProducts");
+
+    if (cart.length === 0) {
+      cartProducts.innerHTML = `
+        <h1>Cart</h1>
+        <p>Your cart is empty.</p>
+      `;
+      return;
+    }
+
+    cartProducts.innerHTML = `
+      <h1>Cart</h1>
+      ${cart.map((item, index) => `
+        <div class="cart-product">
+          <img src="${item.image}" alt="${item.name}">
+
+          <div class="cart-product-info">
+            <h2>${item.name.toUpperCase()}</h2>
+            <button class="remove-cart-item" data-index="${index}">
+              Remove
+            </button>
+          </div>
+
+          <div class="cart-product-size">
+            <label>SIZE:</label>
+            <select class="cart-size-select" data-index="${index}">
+              <option ${item.size === "S" ? "selected" : ""}>S</option>
+              <option ${item.size === "M" ? "selected" : ""}>M</option>
+              <option ${item.size === "L" ? "selected" : ""}>L</option>
+              <option ${item.size === "XL" ? "selected" : ""}>XL</option>
+              <option ${item.size === "XXL" ? "selected" : ""}>XXL</option>
+            </select>
+          </div>
+
+          <div class="cart-product-qty">
+            <label>QTY:</label>
+            <select class="cart-qty-select" data-index="${index}">
+              ${[1,2,3,4,5,6,7,8,9,10].map(qty => `
+                <option value="${qty}" ${item.quantity === qty ? "selected" : ""}>
+                  ${qty}
+                </option>
+              `).join("")}
+            </select>
+          </div>
+
+          <p class="cart-product-price">$${item.price * item.quantity}</p>
+        </div>
+      `).join("")}
+
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span>$${getSubtotal(cart)}</span>
+      </div>
+
+      <div class="voucher-section">
+        <h2>Voucher Code</h2>
+
+        <form class="voucher-form">
+          <input type="text" placeholder="Add a discount code">
+          <button type="submit">Apply</button>
+        </form>
+      </div>
+    `;
+
+    updateOrderSummary(cart);
+    attachCartEvents();
+  }
+
+  function getSubtotal(cart) {
+    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  }
+
+  function updateOrderSummary(cart) {
+    const subtotal = getSubtotal(cart);
+
+    document.querySelector(".summary-row span:last-child").textContent = `$${subtotal}`;
+    document.querySelector(".total-row span:last-child").textContent = `AUD $${subtotal}`;
+  }
+
+  function attachCartEvents() {
+    document.querySelectorAll(".remove-cart-item").forEach(button => {
+      button.addEventListener("click", () => {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        cart.splice(button.dataset.index, 1);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        renderCartPage();
+      });
+    });
+
+    document.querySelectorAll(".cart-size-select").forEach(select => {
+      select.addEventListener("change", () => {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        cart[select.dataset.index].size = select.value;
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        renderCartPage();
+      });
+    });
+
+    document.querySelectorAll(".cart-qty-select").forEach(select => {
+      select.addEventListener("change", () => {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        cart[select.dataset.index].quantity = Number(select.value);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        renderCartPage();
+      });
+    });
+  }
+
+  renderCartPage();
+
+  const discountForm = document.querySelector(".discount-box, .voucher-form");
+
+  if (discountForm) {
+    discountForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      alert("Invalid discount code.");
+    });
+  }
+
+</script>
 
 </body>
 </html>

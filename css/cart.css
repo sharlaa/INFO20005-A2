@@ -121,61 +121,58 @@
 }
 
 /* VOUCHER */
-.voucher-section {
-  padding-top: 18px;
-}
-
 .voucher-section h2 {
   color: #000;
-  font-family: Poppins;
-  font-size: 18px;
-  font-weight: 400;
-
-  margin-bottom: 12px;
+  font-family: Poppins, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 15px;
 }
 
-.voucher-section form {
+.voucher-form {
+  width: 100%;
+  height: 68px;
+
+  border: 2px solid #003E93;
+  border-radius: 14px;
+
   display: flex;
-  gap: 10px;
+  align-items: center;
+
+  overflow: hidden;
+  background: #F4F5F7;
 }
 
-.voucher-section input {
-  width: 220px;
-  height: 38px;
+.voucher-form input {
+  flex: 1;
+  height: 100%;
 
   border: none;
-  border-radius: 20px;
+  outline: none;
+  background: transparent;
 
-  background: rgba(0, 62, 147, 0.85);
+  padding: 0 22px;
 
-  padding: 0 18px;
-
-  color: #F4F5F7;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: italic;
-
-  box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.25);
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  color: #003E93;
 }
 
-.voucher-section input::placeholder {
-  color: rgba(244, 245, 247, 0.8);
+.voucher-form input::placeholder {
+  color: rgba(0, 62, 147, 0.7);
 }
 
-.voucher-section button {
-  width: 62px;
-  height: 38px;
+.voucher-form button {
+  width: 120px;
+  height: 100%;
 
   border: none;
-  border-radius: 12px;
-
   background: #003E93;
-
   color: #F4F5F7;
-  font-family: Poppins;
-  font-size: 14px;
+
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
   font-weight: 700;
-  font-style: italic;
 
   cursor: pointer;
 }
@@ -236,13 +233,38 @@
 
   background: #BFE804;
   color: #000;
+  text-decoration: none;
 
-  font-family: Poppins;
+  font-family: Poppins, sans-serif;
   font-size: 17px;
   font-weight: 700;
-  font-style: bold;
 
   cursor: pointer;
 
   box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+/* HOVER EFFECT */
+.order-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 3px 8px 10px rgba(0, 0, 0, 0.28);
+
+  filter: brightness(1.03);
+}
+
+/* CLICK EFFECT */
+.order-btn:active {
+  transform: translateY(0);
+
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
 }

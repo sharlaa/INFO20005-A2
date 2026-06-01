@@ -110,11 +110,29 @@
         <p class="size-label">SIZE</p>
 
         <div class="size-options">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
-            <button>XXL</button>
+          <button data-size="S">S</button>
+          <button data-size="M">M</button>
+          <button data-size="L">L</button>
+          <button data-size="XL">XL</button>
+          <button data-size="XXL">XXL</button>
+        </div>
+
+        <p class="qty-label">QTY</p>
+
+        <div class="quantity-selector">
+
+          <button id="minusQty" class="qty-btn">
+            −
+          </button>
+
+          <div class="qty-display">
+            <span id="qtyValue">1</span>
+          </div>
+
+          <button id="plusQty" class="qty-btn">
+            +
+          </button>
+
         </div>
 
         <button class="add-cart-btn" id="addCartBtn">
@@ -224,35 +242,56 @@
 
 <div class="cart-popup" id="cartPopup">
 
-  <button class="close-cart" id="closeCartBtn">×</button>
+  <button class="close-cart" id="closeCartBtn">&times;</button>
 
   <h2>Your Cart</h2>
 
-  <div class="cart-item">
-    <img src="assets/golf-shirt1.jpg" alt="Golf Shirt">
+  <div class="cart-items">
+    <!-- JS inserts products here -->
+  </div>
 
-    <div class="cart-item-info">
-      <h3>Golf Shirt</h3>
-      <p>AUD $35</p>
-      <p>Size: M</p>
-      <p>Qty: 1</p>
+  <div class="cart-footer">
+
+    <div class="subtotal-row">
+      <span>Subtotal</span>
+      <span>AUD $0</span>
     </div>
+
+    <a href="checkout.html" class="cart-checkout-btn">
+      CHECKOUT NOW
+    </a>
+
   </div>
-
-  <div class="cart-total">
-    <span>Subtotal</span>
-    <span>AUD $35</span>
-  </div>
-
-<div class="cart-buttons">
-
-  <a href="checkout.html" class="cart-checkout-btn">
-    CHECKOUT NOW
-  </a>
 
 </div>
 
-</div>
+<footer class="footer">
+
+  <div class="store-info">
+    <h3>STORE INFORMATION</h3>
+    <p>
+      ICON HQ<br>
+      850 Cooper street<br>
+      Somerton 3062<br>
+      Victoria<br>
+      Australia<br>
+      yash@icon-sports.com.au<br>
+      ABN- 25 615 676 045
+    </p>
+  </div>
+
+  <div class="newsletter">
+    <h3>Subscribe to our newsletter</h3>
+
+    <form class="newsletter-form">
+      <input type="email" placeholder="Enter your email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <img src="assets/icon-logo.png" alt="ICON logo" class="footer-logo">
+
+</footer>
 
 <script>
   const addCartBtn = document.getElementById("addCartBtn");
@@ -260,7 +299,178 @@
   const cartOverlay = document.getElementById("cartOverlay");
   const closeCartBtn = document.getElementById("closeCartBtn");
 
+  let selectedSize = null;
+  let quantity = 1;
+
+  /* SIZE SELECTOR */
+  const sizeButtons = document.querySelectorAll(".size-options button");
+
+  sizeButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      sizeButtons.forEach(btn => btn.classList.remove("active-size"));
+      button.classList.add("active-size");
+      selectedSize = button.dataset.size;
+    });
+  });
+
+  /* QUANTITY SELECTOR */
+  const minusQty = document.getElementById("minusQty");
+  const plusQty = document.getElementById("plusQty");
+  const qtyValue = document.getElementById("qtyValue");
+
+  qtyValue.textContent = quantity;
+
+  plusQty.addEventListener("click", () => {
+    quantity++;
+    qtyValue.textContent = quantity;
+  });
+
+  minusQty.addEventListener("click", () => {
+    if (quantity > 1) {
+      quantity--;
+      qtyValue.textContent = quantity;
+    }
+  });
+
+  /* CART POPUP RENDER */
+  function renderCartPopup() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const cartItems = document.querySelector(".cart-items");
+    const subtotalRow = document.querySelector(".subtotal-row");
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = "<p>Your cart is empty.</p>";
+      subtotalRow.innerHTML = "<span>Subtotal</span><span>AUD $0</span>";
+      return;
+    }
+
+    const subtotal = cart.reduce((sum, product) => {
+      return sum + product.price * product.quantity;
+    }, 0);
+
+    cartItems.innerHTML = cart.map((item, index) => `
+      <div class="cart-popup-item">
+        <img src="${item.image}" alt="${item.name}">
+
+        <div class="cart-item-info">
+          <h3>${item.name}</h3>
+
+          <button class="remove-item" data-index="${index}">
+            Remove
+          </button>
+
+          <div class="cart-mini-options">
+            <button class="mini-select" data-type="size" data-index="${index}">
+              <span>Size: ${item.size}</span>
+              <span class="mini-arrow">⌄</span>
+            </button>
+
+            <button class="mini-select" data-type="qty" data-index="${index}">
+              <span>Qty: ${item.quantity}</span>
+              <span class="mini-arrow">⌄</span>
+            </button>
+          </div>
+
+          <p>AUD $${item.price} × ${item.quantity}</p>
+        </div>
+      </div>
+    `).join("");
+
+    subtotalRow.innerHTML = `
+      <span>Subtotal</span>
+      <span>AUD $${subtotal}</span>
+    `;
+
+    const removeButtons = document.querySelectorAll(".remove-item");
+
+    removeButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const index = button.dataset.index;
+
+        cart.splice(index, 1);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        renderCartPopup();
+      });
+    });
+
+    const miniSelects = document.querySelectorAll(".mini-select");
+
+    miniSelects.forEach(button => {
+      button.addEventListener("click", () => {
+        const index = button.dataset.index;
+        const type = button.dataset.type;
+
+        if (type === "size") {
+          const newSize = prompt("Choose size: S, M, L, XL, XXL", cart[index].size);
+
+          if (newSize) {
+            const cleanSize = newSize.toUpperCase();
+
+            if (["S", "M", "L", "XL", "XXL"].includes(cleanSize)) {
+              cart[index].size = cleanSize;
+            } else {
+              alert("Please enter a valid size: S, M, L, XL, or XXL.");
+              return;
+            }
+          }
+        }
+
+        if (type === "qty") {
+          const newQty = prompt("Enter quantity", cart[index].quantity);
+
+          if (newQty) {
+            const cleanQty = parseInt(newQty);
+
+            if (cleanQty > 0) {
+              cart[index].quantity = cleanQty;
+            } else {
+              alert("Quantity must be at least 1.");
+              return;
+            }
+          }
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCartPopup();
+      });
+    });
+  }
+
+  /* ADD TO CART */
   addCartBtn.addEventListener("click", () => {
+    if (!selectedSize) {
+      alert("Please choose a size first.");
+      return;
+    }
+
+    const product = {
+      id: "golf-shirt",
+      name: "Golf Shirt",
+      price: 35,
+      size: selectedSize,
+      image: "assets/golf-shirt1.jpg",
+      quantity: quantity
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existingProduct = cart.find(item =>
+      item.id === product.id && item.size === product.size
+    );
+
+    if (existingProduct) {
+      existingProduct.quantity += quantity;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    renderCartPopup();
+
     cartPopup.classList.add("active");
     cartOverlay.classList.add("active");
   });
@@ -274,7 +484,6 @@
     cartPopup.classList.remove("active");
     cartOverlay.classList.remove("active");
   });
-
 
   /* PRODUCT IMAGE GALLERY */
   const galleryImages = [
@@ -292,84 +501,59 @@
   const rightArrow = document.querySelector(".right-arrow");
   const bigImageRow = document.querySelector(".big-image-row");
 
+  function updateGallery() {
+    bigImageRow.classList.add("fade-out");
 
-  function updateGallery(direction = "left") {
+    setTimeout(() => {
+      const firstImageIndex = currentIndex;
+      const secondImageIndex = (currentIndex + 1) % galleryImages.length;
 
-    const firstImageIndex = currentIndex;
-    const secondImageIndex = (currentIndex + 1) % galleryImages.length;
+      bigProductImages[0].src = galleryImages[firstImageIndex];
+      bigProductImages[1].src = galleryImages[secondImageIndex];
 
-    bigProductImages[0].src = galleryImages[firstImageIndex];
-    bigProductImages[1].src = galleryImages[secondImageIndex];
+      thumbnails.forEach((thumbnail, index) => {
+        thumbnail.classList.toggle("active-thumb", index === currentIndex);
+      });
 
-    thumbnails.forEach((thumbnail, index) => {
-      thumbnail.classList.toggle(
-        "active-thumb",
-        index === currentIndex
-      );
-    });
-
-    bigImageRow.classList.remove("slide-left", "slide-right");
-
-    void bigImageRow.offsetWidth;
-
-    bigImageRow.classList.add(
-      direction === "left" ? "slide-left" : "slide-right"
-    );
+      bigImageRow.classList.remove("fade-out");
+    }, 150);
   }
-
 
   rightArrow.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % galleryImages.length;
-    updateGallery("left");
+    updateGallery();
   });
 
   leftArrow.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    updateGallery("right");
+    updateGallery();
   });
 
   thumbnails.forEach((thumbnail, index) => {
     thumbnail.addEventListener("click", () => {
       currentIndex = index;
-      updateGallery("left");
+      updateGallery();
     });
   });
 
-/* SIZE SELECTOR */
-const sizeButtons = document.querySelectorAll(".size-options button");
+  /* ACCORDION */
+  const accordionHeaders = document.querySelectorAll(".accordion-header");
 
-sizeButtons.forEach(button => {
+  accordionHeaders.forEach(header => {
+    header.addEventListener("click", () => {
+      const content = header.nextElementSibling;
+      const icon = header.querySelector("span");
 
-  button.addEventListener("click", () => {
+      content.classList.toggle("active");
 
-    sizeButtons.forEach(btn => {
-      btn.classList.remove("active-size");
+      if (content.classList.contains("active")) {
+        icon.textContent = "−";
+      } else {
+        icon.textContent = "+";
+      }
     });
-
-    button.classList.add("active-size");
-
   });
-
-});
-
-/* ACCORDION */
-const accordionHeaders = document.querySelectorAll(".accordion-header");
-
-accordionHeaders.forEach(header => {
-  header.addEventListener("click", () => {
-    const content = header.nextElementSibling;
-    const icon = header.querySelector("span");
-
-    content.classList.toggle("active");
-
-    if (content.classList.contains("active")) {
-      icon.textContent = "−";
-    } else {
-      icon.textContent = "+";
-    }
-  });
-});
-
 </script>
+
 </body>
 </html>

@@ -2,18 +2,37 @@
 /* PRODUCT LIST PAGE */
 /* ===================== */
 
-.product-list-page {
-  width: 1440px;
-  margin: 0 auto;
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
-  background: #F4F5F7;
+.product-list-page {
+  padding-top: 115px;
 }
 
 /* TOP TITLE AREA */
 
 .product-main {
-  padding: 45px 50px 0;
   background: #F4F5F7;
+}
+
+.product-content {
+  padding: 45px 50px 0;
+}
+
+.category-bar {
+  width: 100%;
+  margin-left: 0;
+
+  height: 74px;
+  background: #003E93;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
 }
 
 
@@ -47,20 +66,6 @@
 }
 
 /* CATEGORY BAR */
-
-
-.category-bar {
-  width: calc(100% + 100px);
-  margin-left: -50px;
-
-  height: 74px;
-  background: #003E93;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 70px;
-}
 
 .category-btn {
   position: relative;
@@ -199,7 +204,7 @@
 
 .product-card h3 {
   font-family: Poppins;
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 400;
 
   margin: 12px 0 0;
@@ -209,7 +214,7 @@
   display: block;
 
   font-family: Poppins;
-  font-size: 18px;
+  font-size: 20rpx;
   font-weight: 400;
 
   margin-top: 2px;
@@ -258,4 +263,69 @@
 
 .page-btn.next {
   border-radius: 0 10px 10px 0;
+}
+
+.load-more-section {
+  margin: 40px auto 0;   
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.load-more-section p {
+  color: #002752;
+
+  font-family: Poppins, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+
+  margin-bottom: 18px;
+}
+
+.load-progress {
+  width: 280px;
+  height: 8px;
+
+  background: rgba(0, 62, 147, 0.12);
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  margin-bottom: 34px;
+}
+
+.load-progress-fill {
+  width: 23%;
+
+  height: 100%;
+
+  background: #003E93;
+  border-radius: 20px;
+}
+
+.load-more-btn {
+  background: transparent;
+  border: none;
+
+  color: #003E93;
+
+  font-family: Poppins, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  padding-bottom: 8px;
+  border-bottom: 3px solid #003E93;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.load-more-btn:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
 }

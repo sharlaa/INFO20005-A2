@@ -10,11 +10,20 @@
   padding: 0 60px;
   box-sizing: border-box;
 
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 1000;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+body {
+  padding-top: 115px;
 }
 
 .shop-navbar::after {
