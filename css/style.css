@@ -65,7 +65,7 @@ body {
 
 /* WITH ICON SPORTS */
 .hero-subtitle {
-  margin-top: 18px;
+  margin-top: 17px;
   margin-bottom: 55px;
 
   color: #F4F5F7;
@@ -559,4 +559,345 @@ body {
   bottom: 140px;
 
   width: 500px;
+}
+
+.stats-top-row .stats-img,
+.stats-bottom-row .stats-img,
+.small-image-group {
+  display: flex;
+}
+
+.stats-top-row > .stats-img,
+.stats-bottom-row > .stats-img {
+  display: block;
+}
+
+/* ===================== */
+/* MOBILE — 390 × 844 */
+/* ===================== */
+
+@media (max-width: 430px) {
+  html,
+  body {
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    background: #F4F5F7;
+  }
+
+  body {
+    padding-top: 78px;
+  }
+
+  /* HERO MOBILE */
+
+  .hero-section {
+    width: 100%;
+    height: 640px;
+    margin: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    top: 80px;
+    left: 0;
+    width: 100%;
+    padding: 0 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 72px;
+    line-height: 1.3;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+.hero-subtitle {
+  margin-top: 0px;
+  margin-bottom: 1px;
+
+  color: #F4F5F7;
+
+  font-family: 'Chillax', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+
+  text-decoration: underline;
+
+  text-align: center;
+
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+  .hero-buttons {
+    width: 100%;
+    margin-top: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero-btn {
+    width: 230px;
+    height: 48px;
+    border-radius: 28px;
+    font-size: 22px;
+    box-shadow: 2px 4px 5px #000;
+  }
+
+  .hero-strip {
+    height: 38px;
+  }
+
+  .hero-strip-track p {
+    font-size: 20px;
+    padding-right: 22px;
+  }
+
+/* STATS MOBILE */
+
+.stats-section {
+  width: 100%;
+  padding: 36px 16px 0;
+}
+
+.stats-box {
+  width: 100%;
+  height: auto;
+
+  border-radius: 42px;
+  padding: 18px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+
+  background: #003E93;
+}
+
+.stats-top-row,
+.stats-bottom-row {
+  display: contents;
+}
+
+.stats-top-row .stats-img,
+.stats-bottom-row .stats-img,
+.small-image-group {
+  display: none;
+}
+
+.stats-card {
+  width: 100%;
+  height: 105px;
+
+  border-radius: 24px;
+}
+
+.stats-card h2 {
+  font-size: 42px;
+}
+
+.stats-card p {
+  font-size: 11px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.stats-bottom-row .stats-card:last-child {
+  grid-column: 1 / 3;
+}
+
+  /* AVAILABLE SPORTS MOBILE */
+
+  .stats-card {
+  width: 100%;
+  height: 105px;
+  border-radius: 22px;
+}
+
+  .available-sports-section {
+    width: 100%;
+    padding: 28px 16px 42px;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .available-sports-header {
+    margin-bottom: 18px;
+  }
+
+  .available-sports-header h2 {
+    font-size: 24px;
+  }
+
+  .sports-arrows {
+    gap: 8px;
+  }
+
+  .sports-arrow {
+    width: 24px;
+    height: 24px;
+  }
+
+  .sports-arrow img {
+    width: 10px;
+    height: 10px;
+  }
+
+  .sports-slider-window {
+    width: 100%;
+    margin-left: 0;
+    overflow: hidden;
+  }
+
+  .sports-slider-track {
+    gap: 16px;
+  }
+
+  .sport-card-img {
+    width: 195px;
+    flex: 0 0 175px;
+  }
+
+  /* CATALOGUES MOBILE */
+
+  .catalogue-section {
+    margin-top: 0;
+    padding: 0 16px 50px;
+  }
+
+  .catalogue-title {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .catalogue-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .catalogue-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 22px;
+    display: block;
+  }
+
+/* FOOTER MOBILE */
+
+.footer {
+  position: relative;
+
+  width: 100%;
+  min-height: 350px;
+
+  background: #003E93;
+  border-radius: 42px 42px 0 0;
+
+  padding: 28px 24px 34px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+/* newsletter on top */
+.newsletter {
+  position: relative;
+  top: auto;
+  right: auto;
+
+  order: 1;
+
+  width: 85%;
+  height: auto;
+
+  margin: 0 auto 28px;
+
+  background: #BFE804;
+  border-radius: 24px;
+
+  padding: 14px 14px 16px;
+
+  box-shadow: 0 8px 12px rgba(0,0,0,0.25);
+}
+
+.newsletter h3 {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+
+  margin-bottom: 12px;
+
+  color: #F4F5F7;
+  white-space: normal;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.newsletter-form input {
+  width: 145px;
+  height: 32px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+  padding: 0 14px;
+}
+
+.newsletter-form button {
+  width: 74px;
+  height: 32px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+}
+
+/* store info */
+.store-info {
+  order: 2;
+
+  width: 55%;
+}
+
+.store-info h3 {
+  font-size: 14px;
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+.store-info p {
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+/* logo beside store info */
+.footer-logo {
+  position: absolute;
+
+  width: 145px;
+
+  right: 24px;
+  top: 190px;
+
+  bottom: auto;
 }

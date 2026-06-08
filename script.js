@@ -5,53 +5,81 @@ const sportsPrev = document.getElementById("sportsPrev");
 const originalCards = [...document.querySelectorAll(".sport-card-img")];
 
 const visibleCards = 3;
-const cardWidth = 340;
-const gap = 60;
-const moveAmount = cardWidth + gap;
 
-/* clone last 3 cards to the front */
+/* clone last cards to front */
 originalCards.slice(-visibleCards).forEach(card => {
-  const clone = card.cloneNode(true);
-  sportsTrack.insertBefore(clone, sportsTrack.firstChild);
+  sportsTrack.insertBefore(card.cloneNode(true), sportsTrack.firstChild);
 });
 
-/* clone first 3 cards to the end */
+/* clone first cards to end */
 originalCards.slice(0, visibleCards).forEach(card => {
-  const clone = card.cloneNode(true);
-  sportsTrack.appendChild(clone);
+  sportsTrack.appendChild(card.cloneNode(true));
 });
+
+function getMoveAmount() {
+  const card = document.querySelector(".sport-card-img");
+
+  const cardWidth = card.offsetWidth;
+
+  const styles = window.getComputedStyle(sportsTrack);
+  const gap = parseInt(styles.columnGap || styles.gap || 0);
+
+  return cardWidth + gap;
+}
 
 let sportsIndex = visibleCards;
 
-/* start in the real first card position */
-sportsTrack.style.transform = `translateX(-${sportsIndex * moveAmount}px)`;
+function updatePosition(withAnimation = true) {
+  const moveAmount = getMoveAmount();
+
+  if (withAnimation) {
+    sportsTrack.style.transition = "transform 0.45s ease";
+  } else {
+    sportsTrack.style.transition = "none";
+  }
+
+  sportsTrack.style.transform =
+    `translateX(-${sportsIndex * moveAmount}px)`;
+}
+
+/* initial position */
+updatePosition(false);
 
 sportsNext.addEventListener("click", () => {
-  sportsIndex++;
 
-  sportsTrack.style.transition = "transform 0.45s ease";
-  sportsTrack.style.transform = `translateX(-${sportsIndex * moveAmount}px)`;
+  sportsIndex++;
+  updatePosition(true);
 
   if (sportsIndex >= originalCards.length + visibleCards) {
+
     setTimeout(() => {
-      sportsTrack.style.transition = "none";
+
       sportsIndex = visibleCards;
-      sportsTrack.style.transform = `translateX(-${sportsIndex * moveAmount}px)`;
+      updatePosition(false);
+
     }, 450);
+
   }
 });
 
 sportsPrev.addEventListener("click", () => {
-  sportsIndex--;
 
-  sportsTrack.style.transition = "transform 0.45s ease";
-  sportsTrack.style.transform = `translateX(-${sportsIndex * moveAmount}px)`;
+  sportsIndex--;
+  updatePosition(true);
 
   if (sportsIndex < visibleCards) {
+
     setTimeout(() => {
-      sportsTrack.style.transition = "none";
+
       sportsIndex = originalCards.length + visibleCards - 1;
-      sportsTrack.style.transform = `translateX(-${sportsIndex * moveAmount}px)`;
+      updatePosition(false);
+
     }, 450);
+
   }
+});
+
+/* recalculate when screen size changes */
+window.addEventListener("resize", () => {
+  updatePosition(false);
 });

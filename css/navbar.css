@@ -164,3 +164,119 @@ body {
   width: 26px;
   height: 26px;
 }
+
+/* Hide hamburger on desktop */
+.mobile-menu-icon {
+  display: none;
+}
+
+/* ===================== */
+/* MOBILE — 390 × 844 */
+/* ===================== */
+
+@media (max-width: 430px) {
+
+  .shop-navbar {
+    width: 100%;
+    height: 58px;
+    padding: 0 14px;
+
+    left: 0;
+    top: 0;
+    transform: none;
+  }
+
+  body {
+    padding-top: 58px;
+  }
+
+  .navbar-top {
+    position: relative;
+
+    width: 100%;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+  }
+
+  /* Hide desktop elements */
+  .nav-search,
+  .navbar-tabs {
+    display: none;
+  }
+
+  /* Hamburger */
+  .mobile-menu-icon {
+    display: block;
+
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 22px;
+    height: 22px;
+
+    object-fit: contain;
+
+    z-index: 1002;
+  }
+
+  /* Logo */
+  .logo-link {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    margin-left: 0;
+  }
+
+  .shop-logo {
+    width: 78px;
+    top: 0;
+  }
+
+  /* Right icons */
+  .nav-actions {
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin: 0;
+
+    z-index: 1002;
+  }
+
+  .nav-actions a {
+    display: flex;
+    align-items: center;
+  }
+
+.nav-actions img[alt="Cart"] {
+  width: 19px;
+  height: 19px;
+}
+
+.nav-actions img[alt="Profile"] {
+  width: 19px;
+  height: 19px;
+  transform: scale(0.8) translateY(1px);
+}
+
+.shop-navbar::after {
+    height: 1px;
+  }
+}
