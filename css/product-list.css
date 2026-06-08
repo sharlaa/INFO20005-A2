@@ -1,3 +1,4 @@
+
 /* ===================== */
 /* PRODUCT LIST PAGE */
 /* ===================== */
@@ -6,6 +7,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .product-list-page {
@@ -124,7 +126,7 @@ body {
 
 .products-section {
   background: #F4F5F7;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 .products-topbar {
@@ -328,4 +330,148 @@ body {
 .load-more-btn:hover {
   opacity: 0.7;
   transform: translateY(-2px);
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+.footer {
+  position: relative;
+  width: 100%;
+  min-height: 574px;
+
+  background: #003E93;
+  border-radius: 70px 70px 0 0;
+
+  padding: 90px 80px;
+  color: #F4F5F7;
+
+  box-shadow: 0 14px 14px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.footer,
+.footer * {
+  font-family: Poppins, sans-serif;
+  box-sizing: border-box;
+}
+
+/* STORE INFO */
+
+.store-info {
+  position: relative;
+  z-index: 2;
+}
+
+.store-info h3 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.store-info p {
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+/* GREEN NEWSLETTER BOX */
+
+.newsletter {
+  position: absolute;
+  top: 70px;
+  right: 80px;
+
+  width: 683px;
+  height: 196px;
+
+  background: #BFE804;
+  border-radius: 45px;
+
+  box-shadow: 0 9px 9px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 20px 48px 24px;
+}
+
+/* TITLE */
+
+.newsletter h3 {
+  font-size: 41px;
+  font-weight: 400;
+  color: #F4F5F7;
+
+  white-space: nowrap;
+
+  margin: 0 0 12px 0;
+
+  line-height: 1.1;
+}
+
+/* FORM */
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin: 0;
+}
+
+/* INPUT */
+
+.newsletter-form input {
+  width: 327px;
+  height: 63px;
+
+  border-radius: 42px;
+  border: 2px solid rgba(219, 214, 214, 0.24);
+
+  background: rgba(244, 245, 247, 0.8);
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+
+  padding: 0 26px;
+
+  font-size: 22px;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* BUTTON */
+
+.newsletter-form button {
+  width: 141px;
+  height: 63px;
+
+  border-radius: 42px;
+  border: 2px solid rgba(219, 214, 214, 0.24);
+
+  background: #F4F5F7;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+
+  font-size: 22px;
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.7);
+
+  cursor: pointer;
+}
+
+/* LOGO */
+
+.footer-logo {
+  position: absolute;
+
+  right: 50px;
+  bottom: 140px;
+
+  width: 500px;
 }

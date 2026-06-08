@@ -298,6 +298,28 @@ body {
   transform: scale(1.03);
 }
 
+.related-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.related-card h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #121A3D;
+    margin-top: 12px;
+    margin-bottom: 4px;
+}
+
+.related-card span {
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #121A3D;
+}
+
 /* CART OVERLAY */
 .cart-overlay {
   display: none;
@@ -697,16 +719,22 @@ body {
   box-shadow: 0 14px 14px rgba(0, 0, 0, 0.25);
 }
 
+.footer,
+.footer * {
+  font-family: Poppins, sans-serif;
+}
+
 /* STORE INFO */
 .store-info h3 {
+  font-family: Poppins, sans-serif;
   font-size: 30px;
   font-weight: 700;
-
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .store-info p {
-  font-size: 23px;
+  font-family: Poppins, sans-serif;
+  font-size: 21px;
   line-height: 1.45;
 }
 
