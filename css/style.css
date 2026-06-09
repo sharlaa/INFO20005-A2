@@ -901,3 +901,61 @@ body {
 
   bottom: auto;
 }
+
+/* ================================= */
+/* DISABLE HOVER EFFECTS ON MOBILE */
+/* ================================= */
+
+.hero-btn::before {
+  display: none !important;
+}
+
+.hero-btn,
+.load-more-btn,
+.order-btn,
+.place-order-btn,
+.category-btn,
+.product-card,
+.catalogue-card,
+.footer button,
+button {
+  transition: none !important;
+}
+
+.hero-btn:hover,
+.load-more-btn:hover,
+.order-btn:hover,
+.place-order-btn:hover,
+.category-btn:hover,
+.product-card:hover,
+.catalogue-card:hover,
+.footer button:hover,
+button:hover {
+  transform: none !important;
+  filter: none !important;
+  opacity: 1 !important;
+  color: inherit !important;
+  box-shadow: inherit !important;
+}
+
+/* prevent green fill effect */
+.hero-btn:hover::before {
+  left: -100% !important;
+}
+
+/* disable link hover effects */
+a:hover {
+  opacity: 1 !important;
+}
+
+/* disable card lift */
+.catalogue-card:hover {
+  transform: none !important;
+}
+
+/* disable any arrow hover animations */
+.sports-arrow:hover {
+  transform: none !important;
+}
+
+}

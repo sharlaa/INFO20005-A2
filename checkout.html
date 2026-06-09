@@ -14,36 +14,100 @@
 <body class="checkout-body">
 
 <nav class="shop-navbar">
+
   <div class="navbar-top">
+
+    <!-- MOBILE HAMBURGER -->
+    <img src="assets/tab.png" alt="Menu" class="mobile-menu-icon">
+
+    <!-- LOGO -->
     <a href="index.html" class="logo-link">
       <img src="assets/icon-logo.png" alt="ICON logo" class="shop-logo">
     </a>
 
+    <!-- SEARCH BAR (DESKTOP) -->
     <div class="nav-search">
       <img src="assets/search.png" alt="Search icon">
       <input type="text" placeholder="Search">
     </div>
 
+    <!-- RIGHT ICONS -->
     <div class="nav-actions">
-    <a href="cart-page.html">
-      <img src="assets/shopping cart.svg" alt="Cart">
-    </a>
+
+      <a href="cart-page.html">
+        <img src="assets/shopping cart.svg" alt="Cart">
+      </a>
 
       <a href="#">
         <img src="assets/profile.svg" alt="Profile">
       </a>
+
     </div>
+
   </div>
 
+  <!-- DESKTOP NAVIGATION -->
   <div class="navbar-tabs">
+
     <a href="index.html">About</a>
+
     <a href="#">Custom Teamwear</a>
+
     <a href="product-list.html">Product List</a>
+
     <a href="#">Club Zone</a>
+
     <a href="#">Enquiry Form</a>
+
     <a href="#">Locations</a>
+
   </div>
+
 </nav>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+
+  <div class="mobile-menu-panel">
+
+    <button class="mobile-menu-close" id="mobileMenuClose">
+      ×
+    </button>
+
+    <a href="index.html">
+      About
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Custom Teamwear
+      <span>›</span>
+    </a>
+
+    <a href="product-list.html">
+      Product List
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Club Zone
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Enquiry Form
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Locations
+      <span>›</span>
+    </a>
+
+  </div>
+
+</div>
 
 <main class="checkout-page">
 
@@ -121,7 +185,15 @@
 
     <div class="summary-card">
 
+   <div class="checkout-divider"></div>
+
+
+    <div class="products-card">
       <div id="checkoutProducts"></div>
+    </div>
+
+
+    <div class="checkout-total-card">
 
       <form class="discount-box">
         <input type="text" placeholder="Add a discount code">
@@ -153,6 +225,8 @@
 
     </div>
 
+  </div>
+
   </aside>
 
 </main>
@@ -164,6 +238,8 @@
     <a href="index.html">Back to Home</a>
   </div>
 </div>
+
+<script src="script.js"></script>
 
 <script>
   function getCart() {

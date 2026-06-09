@@ -269,3 +269,189 @@
   box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* ===================== */
+/* CART PAGE MOBILE */
+/* ===================== */
+
+@media (max-width: 430px) {
+
+  .cart-page {
+    display: flex;
+    flex-direction: column;
+
+    background: #F3F5F7;
+    min-height: auto;
+  }
+
+  .cart-left {
+    padding: 18px 24px 24px;
+  }
+
+  .cart-left h1 {
+    font-size: 32px;
+    margin: 0 0 14px;
+    padding-bottom: 12px;
+  }
+
+  /* PRODUCT */
+
+  .cart-product {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+
+    column-gap: 18px;
+    row-gap: 10px;
+
+    padding: 20px 0;
+    border-bottom: 2px solid rgba(0,0,0,0.25);
+  }
+
+  .cart-product img {
+    width: 95px;
+    height: 125px;
+    object-fit: cover;
+  }
+
+  .cart-product-info h2 {
+    font-size: 18px;
+    margin: 0 0 8px;
+  }
+
+  .cart-product-info a {
+    font-size: 13px;
+  }
+
+  /* SIZE + QTY + PRICE ON SAME LINE */
+
+  .cart-product-size,
+  .cart-product-qty,
+  .cart-product-price {
+    margin-top: 0;
+    align-self: center;
+  }
+
+  .cart-product-size {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .cart-product-qty {
+    grid-column: 2;
+    grid-row: 2;
+
+    justify-self: start;
+  }
+
+  .cart-product-price {
+    grid-column: 2;
+    grid-row: 2;
+
+    justify-self: end;
+
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .cart-product-size label,
+  .cart-product-qty label {
+    display: inline;
+    font-size: 13px;
+    margin: 0;
+  }
+
+  .cart-product-size select,
+  .cart-product-qty select {
+    width: 48px;
+    height: 24px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 13px;
+  }
+
+  /* SUBTOTAL */
+
+  .cart-subtotal-row {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 18px 0;
+
+    font-size: 16px;
+
+    border-bottom: 2px solid rgba(0,0,0,0.25);
+  }
+
+  /* VOUCHER */
+
+  .voucher-section h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .voucher-form {
+    height: 50px;
+    border-radius: 12px;
+  }
+
+  .voucher-form input {
+    font-size: 13px;
+    padding: 0 14px;
+  }
+
+  .voucher-form button {
+    width: 95px;
+    font-size: 14px;
+  }
+
+  /* ORDER SUMMARY */
+
+  .order-summary {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 24px;
+
+    background: #003E93;
+
+    border-radius: 42px 42px 0 0;
+
+    padding: 30px 24px 50px;
+  }
+
+  .order-summary h2 {
+    font-size: 26px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .summary-line {
+    margin-bottom: 18px;
+  }
+
+  .summary-row {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .total-row {
+    font-weight: 700;
+  }
+
+  .total-row small {
+    font-size: 12px;
+  }
+
+  .order-btn {
+    width: 100%;
+    height: 52px;
+
+    margin-top: 20px;
+
+    border-radius: 28px;
+
+    font-size: 16px;
+    font-weight: 700;
+  }
+}

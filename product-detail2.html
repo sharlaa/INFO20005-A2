@@ -16,24 +16,27 @@
 
   <div class="navbar-top">
 
+    <!-- MOBILE HAMBURGER -->
+    <img src="assets/tab.png" alt="Menu" class="mobile-menu-icon">
+
     <!-- LOGO -->
     <a href="index.html" class="logo-link">
       <img src="assets/icon-logo.png" alt="ICON logo" class="shop-logo">
     </a>
 
-    <!-- SEARCH -->
+    <!-- SEARCH BAR (DESKTOP) -->
     <div class="nav-search">
       <img src="assets/search.png" alt="Search icon">
-
       <input type="text" placeholder="Search">
     </div>
 
     <!-- RIGHT ICONS -->
     <div class="nav-actions">
 
-    <a href="cart-page.html">
-      <img src="assets/shopping cart.svg" alt="Cart">
-    </a>
+      <a href="cart-page.html">
+        <img src="assets/shopping cart.svg" alt="Cart">
+      </a>
+
       <a href="#">
         <img src="assets/profile.svg" alt="Profile">
       </a>
@@ -42,7 +45,7 @@
 
   </div>
 
-  <!-- BOTTOM NAV -->
+  <!-- DESKTOP NAVIGATION -->
   <div class="navbar-tabs">
 
     <a href="index.html">About</a>
@@ -60,6 +63,50 @@
   </div>
 
 </nav>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+
+  <div class="mobile-menu-panel">
+
+    <button class="mobile-menu-close" id="mobileMenuClose">
+      ×
+    </button>
+
+    <a href="index.html">
+      About
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Custom Teamwear
+      <span>›</span>
+    </a>
+
+    <a href="product-list.html">
+      Product List
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Club Zone
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Enquiry Form
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Locations
+      <span>›</span>
+    </a>
+
+  </div>
+
+</div>
 
 <section class="product-detail-section">
 
@@ -303,6 +350,8 @@
 
 </footer>
 
+<script src="script.js"></script>
+
 <script>
   const addCartBtn = document.getElementById("addCartBtn");
   const cartPopup = document.getElementById("cartPopup");
@@ -495,56 +544,70 @@
     cartOverlay.classList.remove("active");
   });
 
-  /* PRODUCT IMAGE GALLERY */
-  const galleryImages = [
-    "assets/tennis-shorts1.jpg",
-    "assets/tennis-shorts2.jpg",
-    "assets/tennis-shorts3.jpg",
-    "assets/tennis-shorts4.jpg"
-  ];
+/* PRODUCT IMAGE GALLERY */
+const galleryImages = [
+  "assets/tennis-shorts1.jpg",
+  "assets/tennis-shorts2.jpg",
+  "assets/tennis-shorts3.jpg",
+  "assets/tennis-shorts4.jpg"
+];
 
-  let currentIndex = 0;
+let currentIndex = 0;
 
-  const bigProductImages = document.querySelectorAll(".big-product-image");
-  const thumbnails = document.querySelectorAll(".thumbnail");
-  const leftArrow = document.querySelector(".left-arrow");
-  const rightArrow = document.querySelector(".right-arrow");
-  const bigImageRow = document.querySelector(".big-image-row");
+const bigImages = document.querySelectorAll(".big-product-image");
+const thumbnails = document.querySelectorAll(".thumbnail");
 
-  function updateGallery() {
-    bigImageRow.classList.add("fade-out");
+const leftArrow = document.querySelector(".left-arrow");
+const rightArrow = document.querySelector(".right-arrow");
 
-    setTimeout(() => {
-      const firstImageIndex = currentIndex;
-      const secondImageIndex = (currentIndex + 1) % galleryImages.length;
+function updateGallery() {
 
-      bigProductImages[0].src = galleryImages[firstImageIndex];
-      bigProductImages[1].src = galleryImages[secondImageIndex];
+  const first = currentIndex;
+  const second = (currentIndex + 1) % galleryImages.length;
 
-      thumbnails.forEach((thumbnail, index) => {
-        thumbnail.classList.toggle("active-thumb", index === currentIndex);
-      });
-
-      bigImageRow.classList.remove("fade-out");
-    }, 150);
+  /* Desktop */
+  if (bigImages.length >= 2) {
+    bigImages[0].src = galleryImages[first];
+    bigImages[1].src = galleryImages[second];
   }
 
-  rightArrow.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % galleryImages.length;
+  thumbnails.forEach((thumb, index) => {
+    thumb.classList.toggle(
+      "active-thumb",
+      index === currentIndex
+    );
+  });
+}
+
+/* Mobile: replace 2 desktop images with 4 swipeable images */
+if (window.innerWidth <= 430) {
+  const bigImageRow = document.querySelector(".big-image-row");
+
+  bigImageRow.innerHTML = galleryImages.map(src => `
+    <img src="${src}" class="big-product-image">
+  `).join("");
+}
+
+rightArrow?.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  updateGallery();
+});
+
+leftArrow?.addEventListener("click", () => {
+  currentIndex =
+    (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+
+  updateGallery();
+});
+
+thumbnails.forEach((thumb, index) => {
+  thumb.addEventListener("click", () => {
+    currentIndex = index;
     updateGallery();
   });
+});
 
-  leftArrow.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
-    updateGallery();
-  });
-
-  thumbnails.forEach((thumbnail, index) => {
-    thumbnail.addEventListener("click", () => {
-      currentIndex = index;
-      updateGallery();
-    });
-  });
+updateGallery();  
 
   /* ACCORDION */
   const accordionHeaders = document.querySelectorAll(".accordion-header");
@@ -599,6 +662,7 @@ checkoutNowBtn.addEventListener("click", (event) => {
 
   window.location.href = "checkout.html";
 });
+
 
 </script>
 

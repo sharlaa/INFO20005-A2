@@ -14,41 +14,101 @@
 
 <body class="cart-page-body">
 
-  <nav class="shop-navbar">
+ <nav class="shop-navbar">
 
-    <div class="navbar-top">
+  <div class="navbar-top">
 
-      <a href="index.html" class="logo-link">
-        <img src="assets/icon-logo.png" alt="ICON logo" class="shop-logo">
-      </a>
+    <!-- MOBILE HAMBURGER -->
+    <img src="assets/tab.png" alt="Menu" class="mobile-menu-icon">
 
-      <div class="nav-search">
-        <img src="assets/search.png" alt="Search icon">
-        <input type="text" placeholder="Search">
-      </div>
+    <!-- LOGO -->
+    <a href="index.html" class="logo-link">
+      <img src="assets/icon-logo.png" alt="ICON logo" class="shop-logo">
+    </a>
 
-      <div class="nav-actions">
+    <!-- SEARCH BAR (DESKTOP) -->
+    <div class="nav-search">
+      <img src="assets/search.png" alt="Search icon">
+      <input type="text" placeholder="Search">
+    </div>
+
+    <!-- RIGHT ICONS -->
+    <div class="nav-actions">
+
       <a href="cart-page.html">
         <img src="assets/shopping cart.svg" alt="Cart">
       </a>
 
-        <a href="#">
-          <img src="assets/profile.svg" alt="Profile">
-        </a>
-      </div>
+      <a href="#">
+        <img src="assets/profile.svg" alt="Profile">
+      </a>
 
     </div>
 
-    <div class="navbar-tabs">
-      <a href="index.html">About</a>
-      <a href="#">Custom Teamwear</a>
-      <a href="product-list.html">Product List</a>
-      <a href="#">Club Zone</a>
-      <a href="#">Enquiry Form</a>
-      <a href="#">Locations</a>
-    </div>
+  </div>
 
-  </nav>
+  <!-- DESKTOP NAVIGATION -->
+  <div class="navbar-tabs">
+
+    <a href="index.html">About</a>
+
+    <a href="#">Custom Teamwear</a>
+
+    <a href="product-list.html">Product List</a>
+
+    <a href="#">Club Zone</a>
+
+    <a href="#">Enquiry Form</a>
+
+    <a href="#">Locations</a>
+
+  </div>
+
+</nav>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+
+  <div class="mobile-menu-panel">
+
+    <button class="mobile-menu-close" id="mobileMenuClose">
+      ×
+    </button>
+
+    <a href="index.html">
+      About
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Custom Teamwear
+      <span>›</span>
+    </a>
+
+    <a href="product-list.html">
+      Product List
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Club Zone
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Enquiry Form
+      <span>›</span>
+    </a>
+
+    <a href="#">
+      Locations
+      <span>›</span>
+    </a>
+
+  </div>
+
+</div>
 
 <main class="cart-page">
 
@@ -85,6 +145,8 @@
 
 
 </main>
+
+<script src="script.js"></script>
 
 <script>
   function renderCartPage() {
